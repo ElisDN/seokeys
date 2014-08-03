@@ -2,7 +2,9 @@
 
 namespace tests\models;
 
-use app\models\LoginForm;
+use Yii;
+use yii\codeception\TestCase;
+use app\modules\user\models\LoginForm;
 use Codeception\Specify;
 
 class LoginFormTest extends \Codeception\Test\Unit

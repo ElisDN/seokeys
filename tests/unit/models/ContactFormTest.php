@@ -2,7 +2,7 @@
 
 namespace tests\models;
 
-use app\models\ContactForm;
+use app\modules\main\models\ContactForm;
 
 class ContactFormTest extends \Codeception\Test\Unit
 {
