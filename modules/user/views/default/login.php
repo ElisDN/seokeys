@@ -4,12 +4,12 @@ use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $model app\models\LoginForm */
+/* @var $model \app\modules\user\models\LoginForm */
 
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
+<div class="user-default-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to login:</p>
