@@ -10,6 +10,9 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+		'request' => [
+			'cookieValidationKey' => '',
+		],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
         ],
