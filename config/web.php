@@ -3,19 +3,19 @@
 $config = [
     'id' => 'app',
     'components' => [
-        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
+		'user' => [
+			'identityClass' => 'app\models\User',
+			'enableAutoLogin' => true,
+		],
+		'errorHandler' => [
+			'errorAction' => 'site/error',
+		],
 		'request' => [
 			'cookieValidationKey' => '',
 		],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-        ],
+		'log' => [
+			'traceLevel' => YII_DEBUG ? 3 : 0,
+		],
     ],
 ];
 
