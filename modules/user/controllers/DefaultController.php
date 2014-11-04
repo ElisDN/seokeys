@@ -44,6 +44,16 @@ class DefaultController extends Controller
         ];
     }
 
+    public function actions()
+    {
+        return [
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
