@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\contact\controllers;
+namespace app\modules\main\controllers;
 
-use app\modules\contact\models\ContactForm;
+use app\modules\main\models\ContactForm;
 use yii\web\Controller;
 use Yii;
 
-class DefaultController extends Controller
+class ContactController extends Controller
 {
 	public function actions()
 	{

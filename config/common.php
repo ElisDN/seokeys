@@ -14,9 +14,6 @@ return [
 		'main' => [
 			'class' => 'app\modules\main\Module',
 		],
-		'contact' => [
-			'class' => 'app\modules\contact\Module',
-		],
 		'user' => [
 			'class' => 'app\modules\user\Module',
 		],
@@ -32,7 +29,7 @@ return [
 			'showScriptName' => false,
 			'rules' => [
 				'' => 'main/default/index',
-				'contact' => 'contact/default/index',
+				'contact' => 'main/contact/index',
 				'<_a:(about|error)>' => 'main/default/<_a>',
 				'<_a:(login|logout|signup|confirm-email|request-password-reset|reset-password)>' => 'user/default/<_a>',
 
