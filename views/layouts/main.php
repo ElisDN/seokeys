@@ -39,7 +39,6 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => array_filter([
             ['label' => 'Home', 'url' => ['/main/default/index']],
-            ['label' => 'About', 'url' => ['/main/default/about']],
             ['label' => 'Contact', 'url' => ['/main/contact/index']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Sign Up', 'url' => ['/user/default/signup']] :
