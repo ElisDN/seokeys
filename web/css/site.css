@@ -89,3 +89,11 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+h1 {
+    display: none;
+}
+
+.jumbotron h1 {
+    display: block;
+}
