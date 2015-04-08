@@ -52,7 +52,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['email', 'unique', 'targetClass' => self::className(), 'message' => 'This email address has already been taken.'],
             ['email', 'string', 'max' => 255],
 
-            [['status'], 'integer'],
+            ['status', 'integer'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())],
         ];
