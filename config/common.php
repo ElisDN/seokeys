@@ -8,6 +8,7 @@ $params = ArrayHelper::merge(
 );
 
 return [
+    'name' => 'SeoKeys',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
 	'modules' => [
@@ -51,4 +52,3 @@ return [
     ],
     'params' => $params,
 ];
- 
