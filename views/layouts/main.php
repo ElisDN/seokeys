@@ -36,14 +36,14 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => array_filter([
-                    ['label' => 'Home', 'url' => ['/main/default/index']],
-                    ['label' => 'Contact', 'url' => ['/main/contact/index']],
+                    ['label' => 'Главная', 'url' => ['/main/default/index']],
+                    ['label' => 'Связь', 'url' => ['/main/contact/index']],
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Sign Up', 'url' => ['/user/default/signup']] :
+                        ['label' => 'Регистрация', 'url' => ['/user/default/signup']] :
                         false,
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/user/default/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                        ['label' => 'Вход', 'url' => ['/user/default/login']] :
+                        ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/user/default/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ]),
