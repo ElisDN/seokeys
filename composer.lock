@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ec5f825fd8d3cb249e1298e99003e613",
+    "hash": "f32b1d1efc812ecdfe6578bc87a6e183",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -89,16 +89,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "2.1.3",
+            "version": "1.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery.git",
-                "reference": "8f2a9d9272d6ed7f32d3a484740ab342c02541e0"
+                "reference": "9690801db01709bfbff5f977d07fb7cc14472908"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery/zipball/8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
-                "reference": "8f2a9d9272d6ed7f32d3a484740ab342c02541e0",
+                "url": "https://api.github.com/repos/jquery/jquery/zipball/9690801db01709bfbff5f977d07fb7cc14472908",
+                "reference": "9690801db01709bfbff5f977d07fb7cc14472908",
                 "shasum": ""
             },
             "require-dev": {
