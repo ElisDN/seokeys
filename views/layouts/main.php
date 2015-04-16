@@ -43,9 +43,13 @@ AppAsset::register($this);
             Yii::$app->user->isGuest ?
                 ['label' => 'Регистрация', 'url' => ['/user/default/signup']] :
                 false,
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Вход', 'url' => ['/user/default/login']]
-            ) : (
+            Yii::$app->user->isGuest ?
+                ['label' => 'Вход', 'url' => ['/user/default/login']] :
+                false,
+            !Yii::$app->user->isGuest ?
+                ['label' => 'Профиль', 'url' => ['/user/profile/index']] :
+                false,
+            !Yii::$app->user->isGuest ? (
                 '<li>'
                 . Html::beginForm(['/user/default/logout'], 'post')
                 . Html::submitButton(
@@ -54,7 +58,7 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ) : false,
         ]),
     ]);
     NavBar::end();
