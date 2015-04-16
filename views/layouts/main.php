@@ -43,9 +43,15 @@ AppAsset::register($this);
                         false,
                     Yii::$app->user->isGuest ?
                         ['label' => 'Вход', 'url' => ['/user/default/login']] :
-                        ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',
+                        false,
+                    !Yii::$app->user->isGuest ?
+                        ['label' => 'Профиль', 'url' => ['/user/profile/index']] :
+                        false,
+                    !Yii::$app->user->isGuest ?
+                        ['label' => 'Выход',
                             'url' => ['/user/default/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
+                            'linkOptions' => ['data-method' => 'post']] :
+                        false,
                 ]),
             ]);
             NavBar::end();
