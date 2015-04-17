@@ -8,24 +8,21 @@ Source code of SEO-service.
 Installation
 ------
 
-1. Create project:
+Create a project:
 
 ~~~
 composer global require "fxp/composer-asset-plugin:1.0.0"
 composer create-project --prefer-dist --stability=dev elisdn/seokeys project
 ~~~
 
-2. Init environment:
+Init an environment:
 
 ~~~
 php init
 ~~~
 
-3. Fill DB connection information in `config/common-local.php`.
-3. Execute migrations:
+Fill your DB connection information in `config/common-local.php` and execute migrations:
 
 ~~~
 php yii migrate
 ~~~
-
-Enjoy!
