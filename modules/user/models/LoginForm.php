@@ -35,9 +35,9 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => 'Имя пользователя',
-            'password' => 'Пароль',
-            'rememberMe' => 'Запомнить меня',
+            'username' => Yii::t('app', 'Username'),
+            'password' => Yii::t('app', 'Password'),
+            'rememberMe' => Yii::t('app', 'Remember me'),
         ];
     }
 
@@ -51,11 +51,11 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError('password', 'Неверное имя пользователя или пароль.');
+                $this->addError('password', 'Incorrect username or password.');
             } elseif ($user && $user->status == User::STATUS_BLOCKED) {
-                $this->addError('username', 'Ваш аккаунт заблокирован.');
+                $this->addError('username', 'Your profile is blocked.');
             } elseif ($user && $user->status == User::STATUS_WAIT) {
-                $this->addError('username', 'Ваш аккаунт не подтвежден.');
+                $this->addError('username', 'Your profile is not confirmed.');
             }
         }
     }
