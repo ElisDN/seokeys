@@ -7,13 +7,13 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \app\modules\user\models\LoginForm */
 
-$this->title = 'Вход';
+$this->title = Yii::t('app', 'Login');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Для входа на сайт введите данные своей учётной записи:</p>
+    <p><?= Yii::t('app', 'Please fill out the following fields to login:') ?></p>
 
     <div class="row">
         <div class="col-lg-5">
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'password')->passwordInput() ?>
             <?= $form->field($model, 'rememberMe')->checkbox() ?>
             <div style="color:#999;margin:1em 0">
-                <?= Html::a('Восстановить пароль', ['request-password-reset']) ?>.
+                <?= Html::a(Yii::t('app', 'Remember password'), ['request-password-reset']) ?>.
             </div>
             <div class="form-group">
                 <?= Html::submitButton('Войти на сайт', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>

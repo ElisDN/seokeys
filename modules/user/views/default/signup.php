@@ -7,13 +7,13 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\modules\user\models\SignupForm */
 
-$this->title = 'Регистрация';
+$this->title = Yii::t('app', 'Signup');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Для регистрации заполните следующие поля:</p>
+    <p><?= Yii::t('app', 'Please fill out the following fields to signup:') ?></p>
 
     <div class="row">
         <div class="col-lg-5">
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
             ]) ?>
             <div class="form-group">
-                <?= Html::submitButton('Зарегистрироваться', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                <?= Html::submitButton(Yii::t('app', 'Signup'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>

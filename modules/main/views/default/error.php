@@ -17,8 +17,4 @@ $this->title = $name;
         <?= nl2br(Html::encode($message)) ?>
     </div>
 
-    <p>
-        Так получилось...
-    </p>
-
 </div>

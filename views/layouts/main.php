@@ -38,22 +38,22 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => array_filter([
-            ['label' => 'Главная', 'url' => ['/main/default/index']],
-            ['label' => 'Связь', 'url' => ['/main/contact/index']],
+            ['label' => Yii::t('app/menu', 'Home'), 'url' => ['/main/default/index']],
+            ['label' => Yii::t('app/menu', 'Contact'), 'url' => ['/main/contact/index']],
             Yii::$app->user->isGuest ?
-                ['label' => 'Регистрация', 'url' => ['/user/default/signup']] :
+                ['label' => Yii::t('app/menu', 'Signup'), 'url' => ['/user/default/signup']] :
                 false,
             Yii::$app->user->isGuest ?
-                ['label' => 'Вход', 'url' => ['/user/default/login']] :
+                ['label' => Yii::t('app/menu', 'Login'), 'url' => ['/user/default/login']] :
                 false,
             !Yii::$app->user->isGuest ?
-                ['label' => 'Профиль', 'url' => ['/user/profile/index']] :
+                ['label' => Yii::t('app/menu', 'Profile'), 'url' => ['/user/profile/index']] :
                 false,
             !Yii::$app->user->isGuest ? (
                 '<li>'
                 . Html::beginForm(['/user/default/logout'], 'post')
                 . Html::submitButton(
-                    'Выход (' . Yii::$app->user->identity->username . ')',
+                    Yii::t('app/menu', 'Logout'),
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()

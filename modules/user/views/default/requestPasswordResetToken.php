@@ -6,20 +6,20 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\modules\user\models\PasswordResetRequestForm */
 
-$this->title = 'Восстановление пароля';
+$this->title = Yii::t('app', 'Request password reset');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-request-password-reset">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Введите свой Email и мы пришлём Вам инструкцию по восстановлению:</p>
+    <p><?= Yii::t('app', 'Please fill out your email. A link to reset password will be sent there.') ?></p>
 
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
             <?= $form->field($model, 'email') ?>
             <div class="form-group">
-                <?= Html::submitButton('Отправить инструкцию', ['class' => 'btn btn-primary']) ?>
+                <?= Html::submitButton(Yii::t('app', 'Send'), ['class' => 'btn btn-primary']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>

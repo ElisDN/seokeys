@@ -40,6 +40,17 @@ return [
                 '<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w-]+>' => '<_m>/<_c>/<_a>',
             ],
         ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/menu' => 'menu.php',
+                    ],
+                ],
+            ],
+        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
         ],

@@ -24,13 +24,13 @@ class SignupForm extends Model
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => User::className(), 'message' => 'Это имя пользователя уже занято.'],
+            ['username', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'This username already exists.')],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => User::className(), 'message' => 'Этот Email уже используется.'],
+            ['email', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'This Email already exists.')],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
@@ -45,10 +45,10 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => 'Имя пользователя',
-            'email' => 'Email',
-            'password' => 'Пароль',
-            'verifyCode' => 'Код',
+            'username' => Yii::t('app', 'Username'),
+            'email' => Yii::t('app', 'Your Email'),
+            'password' => Yii::t('app', 'Password'),
+            'verifyCode' => Yii::t('app', 'Verify code'),
         ];
     }
 

@@ -34,7 +34,7 @@ class PasswordResetRequestForm extends Model
     public function attributeLabels()
     {
         return [
-            'email' => 'Ваш Email',
+            'email' => Yii::t('app', 'Your Email'),
         ];
     }
 
