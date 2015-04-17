@@ -22,6 +22,7 @@ return [
     'Remember me' => 'Запомнить меня',
     'Remember password' => 'Восстановить пароль',
     'Change password' => 'Смена пароля',
+    'Request password reset' => 'Восстановление пароля',
     'Reset password' => 'Восстановление пароля',
 
     'Send' => 'Отправить',
@@ -51,7 +52,7 @@ return [
     'Your profile is blocked.' => 'Ваш аккаунт заблокирован.',
     'Your profile is not confirmed.' => 'Ваш аккаунт не подтвежден.',
 
-    'Follow the link below to reset your password:' => 'Для подтверждения адреса пройдите по ссылке:',
+    'Follow the link below to reset your password:' => 'Для смены пароля пройдите по ссылке:',
     'Follow the link below to confirm your email:' => 'Для подтверждения адреса пройдите по ссылке:',
     'If you do not register on our site just remove this mail.' => 'Если Вы не регистрировались на нашем сайте, то просто удалите это письмо.'
 ];

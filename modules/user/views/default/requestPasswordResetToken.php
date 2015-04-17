@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\modules\user\models\PasswordResetRequestForm */
 
-$this->title = Yii::t('app', 'Reset password');
+$this->title = Yii::t('app', 'Request password reset');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-request-password-reset">
