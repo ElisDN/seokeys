@@ -21,14 +21,13 @@ return [
     'Current password' => 'Текущий пароль',
     'Remember me' => 'Запомнить меня',
     'Remember password' => 'Восстановить пароль',
-    'Change password' => 'Смена пароля',
+    'Change password' => 'Сменить пароль',
     'Request password reset' => 'Восстановление пароля',
     'Reset password' => 'Восстановление пароля',
 
     'Send' => 'Отправить',
     'Save' => 'Сохранить',
     'Update' => 'Редактировать',
-    'Updating' => 'Редактирование',
     'Delete' => 'Удалить',
 
     'Please fill out the following fields to login:' => 'Для входа на сайт введите данные своей учётной записи:',
