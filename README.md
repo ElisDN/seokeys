@@ -12,7 +12,7 @@ Installation
 
 ~~~
 composer global require "fxp/composer-asset-plugin:1.0.0"
-composer create-project --prefer-dist elisdn/seokeys project
+composer create-project --prefer-dist --stability=dev elisdn/seokeys project
 ~~~
 
 2. Init environment:
