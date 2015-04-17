@@ -1,16 +1,13 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "name": "elisdn/seokeys",
+    "description": "SEO-service Yii 2",
+    "keywords": ["yii2", "framework"],
+    "homepage": "http://www.elisdn.ru",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "wiki": "http://www.elisdn.ru/blog/60/seo-service-on-yii2-installing-of-application",
+        "source": "https://github.com/ElisDN/seokeys"
     },
     "minimum-stability": "stable",
     "require": {
