@@ -14,6 +14,14 @@ Create a project:
 composer create-project --stability=dev elisdn/seokeys project
 ~~~
 
+or clone the repository for `pull` command availability:
+
+~~~
+git clone https://github.com/ElisDN/seokeys.git project
+cd project
+composer install
+~~~
+
 Init an environment:
 
 ~~~
