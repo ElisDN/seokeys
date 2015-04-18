@@ -44,8 +44,8 @@ return [
     'Active' => 'Активен',
     'Waits of verify' => 'Ожидает подтверждения',
 
-    'This username is exists.' => 'Это имя пользователя уже занято.',
-    'This Email is exists.' => 'Этот Email уже используется.',
+    'This username already exists.' => 'Это имя пользователя уже занято.',
+    'This Email already exists.' => 'Этот Email уже используется.',
     'Wrong current password.' => 'Неверный текущий пароль.',
     'Incorrect username or password.' => 'Неверное имя пользователя или пароль.',
     'Your profile is blocked.' => 'Ваш аккаунт заблокирован.',

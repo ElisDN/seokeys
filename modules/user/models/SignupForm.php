@@ -24,13 +24,13 @@ class SignupForm extends Model
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'This username is exists.')],
+            ['username', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'This username already exists.')],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'This Email is exists.')],
+            ['email', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'This Email already exists.')],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
