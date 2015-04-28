@@ -6,10 +6,10 @@
 $confirmLink = Yii::$app->urlManager->createAbsoluteUrl(['user/default/confirm-email', 'token' => $user->email_confirm_token]);
 ?>
 
-<?= Yii::t('app', 'Hello, {username}!', ['username' => $user->username]); ?>
+<?= Yii::t('app', 'HELLO {username}', ['username' => $user->username]); ?>
 
-<?= Yii::t('app', 'Follow the link below to confirm your email:') ?>
+<?= Yii::t('app', 'FOLLOW_TO_CONFIRM_EMAIL') ?>
 
 <?= $confirmLink ?>
 
-<?= Yii::t('app', 'If you do not register on our site just remove this mail.') ?>
+<?= Yii::t('app', 'IGNORE_IF_DO_NOT_REGISTER') ?>

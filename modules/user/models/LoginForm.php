@@ -38,9 +38,9 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('app', 'Username'),
-            'password' => Yii::t('app', 'Password'),
-            'rememberMe' => Yii::t('app', 'Remember me'),
+            'username' => Yii::t('app', 'USER_USERNAME'),
+            'password' => Yii::t('app', 'USER_PASSWORD'),
+            'rememberMe' => Yii::t('app', 'USER_REMEMBER_ME'),
         ];
     }
 
@@ -57,11 +57,11 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError('password', Yii::t('app', 'Incorrect username or password.'));
+                $this->addError('password', Yii::t('app', 'ERROR_WRONG_USERNAME_OR_PASSWORD'));
             } elseif ($user && $user->status == User::STATUS_BLOCKED) {
-                $this->addError('username', Yii::t('app', 'Your profile is blocked.'));
+                $this->addError('username', Yii::t('app', 'ERROR_PROFILE_BLOCKED'));
             } elseif ($user && $user->status == User::STATUS_WAIT) {
-                $this->addError('username', Yii::t('app', 'Your profile is not confirmed.'));
+                $this->addError('username', Yii::t('app', 'ERROR_PROFILE_NOT_CONFIRMED'));
             }
         }
     }
