@@ -36,19 +36,19 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => array_filter([
-                    ['label' => Yii::t('app/menu', 'Home'), 'url' => ['/main/default/index']],
-                    ['label' => Yii::t('app/menu', 'Contact'), 'url' => ['/main/contact/index']],
+                    ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/main/default/index']],
+                    ['label' => Yii::t('app', 'NAW_CONTACT'), 'url' => ['/main/contact/index']],
                     Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app/menu', 'Signup'), 'url' => ['/user/default/signup']] :
+                        ['label' => Yii::t('app', 'NAV_SIGNUP'), 'url' => ['/user/default/signup']] :
                         false,
                     Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app/menu', 'Login'), 'url' => ['/user/default/login']] :
+                        ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/user/default/login']] :
                         false,
                     !Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app/menu', 'Profile'), 'url' => ['/user/profile/index']] :
+                        ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']] :
                         false,
                     !Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app/menu', 'Logout'),
+                        ['label' => Yii::t('app', 'NAV_LOGOUT'),
                             'url' => ['/user/default/logout'],
                             'linkOptions' => ['data-method' => 'post']] :
                         false,

@@ -6,13 +6,13 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\modules\user\models\ResetPasswordForm */
 
-$this->title = Yii::t('app', 'Reset password');
+$this->title = Yii::t('app', 'TITLE_RESET_PASSWORD');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-reset-password">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p><?= Yii::t('app', 'Please choose your new password:') ?></p>
+    <p><?= Yii::t('app', 'PLEASE_FILL_FOR_RESET') ?></p>
 
     <div class="row">
         <div class="col-lg-5">

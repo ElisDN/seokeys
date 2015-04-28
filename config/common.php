@@ -47,7 +47,6 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'fileMap' => [
                         'app' => 'app.php',
-                        'app/menu' => 'menu.php',
                     ],
                 ],
             ],
