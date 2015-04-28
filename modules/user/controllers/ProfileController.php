@@ -65,6 +65,6 @@ class ProfileController extends Controller
      */
     private function findModel()
     {
-        return Yii::$app->user->identity;
+        return User::findOne(Yii::$app->user->identity->getId());
     }
 }
