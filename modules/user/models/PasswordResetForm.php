@@ -9,7 +9,7 @@ use Yii;
 /**
  * Password reset form
  */
-class ResetPasswordForm extends Model
+class PasswordResetForm extends Model
 {
     public $password;
 

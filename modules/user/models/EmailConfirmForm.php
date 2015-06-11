@@ -9,7 +9,7 @@ use Yii;
 /**
  * Password reset form
  */
-class ConfirmEmailForm extends Model
+class EmailConfirmForm extends Model
 {
     /**
      * @var User
@@ -36,9 +36,9 @@ class ConfirmEmailForm extends Model
     }
 
     /**
-     * Resets password.
+     * Confirm email.
      *
-     * @return boolean if password was reset.
+     * @return boolean if email was confirmed.
      */
     public function confirmEmail()
     {
