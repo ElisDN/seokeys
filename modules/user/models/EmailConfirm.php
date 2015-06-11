@@ -34,9 +34,9 @@ class EmailConfirm
     }
 
     /**
-     * Resets password.
+     * Confirm email.
      *
-     * @return boolean if password was reset.
+     * @return boolean if email was confirmed.
      */
     public function confirmEmail()
     {
