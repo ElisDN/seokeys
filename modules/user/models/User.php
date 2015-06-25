@@ -6,6 +6,7 @@ use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 use yii\web\IdentityInterface;
 
 /**
@@ -62,10 +63,9 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function scenarios()
     {
-        return [
-            self::SCENARIO_DEFAULT => ['username', 'email', 'status'],
+        return ArrayHelper::merge(parent::scenarios(), [
             self::SCENARIO_PROFILE => ['email'],
-        ];
+        ]);
     }
 
     /**
