@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\components\ActionColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -36,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'email:email',
             // 'status',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => ActionColumn::className()],
         ],
     ]); ?>
 
