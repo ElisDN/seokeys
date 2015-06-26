@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\user\models\User */
+/* @var $model app\modules\admin\models\User */
 
 $this->title = Yii::t('app', 'TITLE_CREATE');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'ADMIN'), 'url' => ['default/index']];
