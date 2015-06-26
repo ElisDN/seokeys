@@ -16,7 +16,9 @@
 		"yiisoft/yii2-swiftmailer": "*",
 		"bower-asset/html5shiv": "*",
 		"bower-asset/respond": "*",
-		"bower-asset/jquery": "1.*"
+		"bower-asset/jquery": "1.*",
+		"kartik-v/yii2-widget-datepicker": "*",
+		"kartik-v/yii2-field-range": "*"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",
