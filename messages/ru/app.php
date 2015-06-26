@@ -7,6 +7,7 @@ return [
     'NAV_LOGIN' => 'Вход',
     'NAV_PROFILE' => 'Профиль',
     'NAV_LOGOUT' => 'Выход',
+    'NAV_ADMIN' => 'Управление',
 
     'BUTTON_SEND' => 'Отправить',
     'BUTTON_SAVE' => 'Сохранить',

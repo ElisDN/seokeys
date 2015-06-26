@@ -37,6 +37,7 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
+        'activateParents' => true,
         'items' => array_filter([
             ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/main/default/index']],
             ['label' => Yii::t('app', 'NAW_CONTACT'), 'url' => ['/main/contact/index']],
@@ -48,6 +49,12 @@ AppAsset::register($this);
                 false,
             !Yii::$app->user->isGuest ?
                 ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']] :
+                false,
+            !Yii::$app->user->isGuest ?
+                ['label' => Yii::t('app', 'NAV_ADMIN'), 'items' => [
+                    ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']],
+                    ['label' => Yii::t('app', 'ADMIN_USERS'), 'url' => ['/admin/users/index']],
+                ]] :
                 false,
             !Yii::$app->user->isGuest ? (
                 '<li>'
