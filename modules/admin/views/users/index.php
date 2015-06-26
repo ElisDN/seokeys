@@ -17,7 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="users-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a(Yii::t('app', 'ADMIN_USERS_ADD'), ['create'], ['class' => 'btn btn-success']) ?>
