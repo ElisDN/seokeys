@@ -3,6 +3,7 @@
 use app\modules\admin\components\ActionColumn;
 use app\modules\admin\models\User;
 use app\components\SetColumn;
+use kartik\date\DatePicker;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -29,8 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'created_at',
-            'updated_at',
+            [
+                'filter' => DatePicker::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'date_from',
+                    'attribute2' => 'date_to',
+                    'type' => DatePicker::TYPE_RANGE,
+                    'separator' => '-',
+                    'pluginOptions' => ['format' => 'yyyy-mm-dd']
+                ]),
+                'attribute' => 'created_at',
+                'format' => 'datetime',
+            ],
             'username',
             'email:email',
             [
