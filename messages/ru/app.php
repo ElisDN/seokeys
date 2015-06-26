@@ -49,6 +49,8 @@ return [
     'USER_CREATED' => 'Создан',
     'USER_UPDATED' => 'Обновлён',
     'USER_EMAIL' => 'Email',
+    'USER_DATE_FROM' => 'Дата с',
+    'USER_DATE_TO' => 'Дата по',
     'USER_STATUS' => 'Статус',
     'USER_STATUS_BLOCKED' => 'Заблокирован',
     'USER_STATUS_ACTIVE' => 'Активен',
