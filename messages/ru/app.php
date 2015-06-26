@@ -10,9 +10,13 @@ return [
 
     'BUTTON_SEND' => 'Отправить',
     'BUTTON_SAVE' => 'Сохранить',
+    'BUTTON_CREATE' => 'Добавить',
     'BUTTON_UPDATE' => 'Редактировать',
     'BUTTON_DELETE' => 'Удалить',
 
+    'CONFIRM_DELETE' => 'Удалить запись?',
+
+    'TITLE_CREATE' => 'Добавление',
     'TITLE_UPDATE' => 'Редактирование',
     'TITLE_SIGNUP' => 'Регистрация',
     'TITLE_LOGIN' => 'Вход',
@@ -23,6 +27,11 @@ return [
 
     'LINK_CHANGE_PASSWORD' => 'Сменить пароль',
     'LINK_RESET_PASSWORD' => 'Восстановить пароль',
+
+    'ADMIN' => 'Панель управления',
+
+    'ADMIN_USERS' => 'Пользователи',
+    'ADMIN_USERS_ADD' => 'Добавить пользователя',
 
     'CONTACT_NAME' => 'Ваше имя',
     'CONTACT_EMAIL' => 'Ваш Email',
@@ -52,6 +61,8 @@ return [
     'PLEASE_FILL_FOR_SIGNUP' => 'Для регистрации заполните следующие поля:',
     'PLEASE_FILL_FOR_RESET_REQUEST' => 'Введите свой Email и мы пришлём Вам инструкцию по восстановлению:',
     'PLEASE_FILL_FOR_RESET' => 'Введите новый пароль:',
+
+    'ERROR_NOT_FOUND' => 'Запрошенная страница не найдена.',
 
     'ERROR_USERNAME_EXISTS' => 'Это имя пользователя уже занято.',
     'ERROR_EMAIL_EXISTS' => 'Этот Email уже используется.',
