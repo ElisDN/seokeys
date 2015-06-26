@@ -97,3 +97,10 @@ h1 {
 .jumbotron h1 {
     display: block;
 }
+
+.grid-view td.action-column {
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: 0.1em;
+    max-width: 7em;
+}
