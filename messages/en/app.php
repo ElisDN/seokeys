@@ -10,9 +10,13 @@ return [
 
     'BUTTON_SEND' => 'Send',
     'BUTTON_SAVE' => 'Save',
+    'BUTTON_CREATE' => 'Create',
     'BUTTON_UPDATE' => 'Update',
     'BUTTON_DELETE' => 'Delete',
 
+    'CONFIRM_DELETE' => 'Are you sure you want to delete this item?',
+
+    'TITLE_CREATE' => 'Create',
     'TITLE_UPDATE' => 'Update',
     'TITLE_SIGNUP' => 'Signup',
     'TITLE_LOGIN' => 'Login',
@@ -23,6 +27,11 @@ return [
 
     'LINK_CHANGE_PASSWORD' => 'Change password',
     'LINK_RESET_PASSWORD' => 'Reset password',
+
+    'ADMIN' => 'Control panel',
+
+    'ADMIN_USERS' => 'Users',
+    'ADMIN_USERS_ADD' => 'Create user',
 
     'CONTACT_NAME' => 'Your name',
     'CONTACT_EMAIL' => 'Your Email',
@@ -51,6 +60,8 @@ return [
     'PLEASE_FILL_FOR_SIGNUP' => 'Please fill out the following fields to signup:',
     'PLEASE_FILL_FOR_RESET_REQUEST' => 'Please fill out your email. A link to reset password will be sent there.',
     'PLEASE_FILL_FOR_RESET' => 'Please choose your new password:',
+
+    'ERROR_NOT_FOUND' => 'The requested page does not exist.',
 
     'ERROR_USERNAME_EXISTS' => 'This username already exists.',
     'ERROR_EMAIL_EXISTS' => 'This Email already exists.',
