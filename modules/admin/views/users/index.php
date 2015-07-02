@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\admin\components\ActionColumn;
+use app\components\ActionColumn;
 use app\modules\admin\models\User;
 use app\components\SetColumn;
 use kartik\date\DatePicker;
