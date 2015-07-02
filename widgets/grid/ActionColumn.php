@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\components;
+namespace app\widgets\grid;
 
 class ActionColumn extends \yii\grid\ActionColumn
 {
