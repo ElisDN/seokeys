@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components;
+namespace app\components\grid;
 
 use yii\grid\DataColumn;
 use yii\helpers\ArrayHelper;

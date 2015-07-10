@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components;
+namespace app\components\grid;
 
 use Closure;
 use yii\grid\DataColumn;

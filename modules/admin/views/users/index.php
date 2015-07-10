@@ -1,9 +1,9 @@
 <?php
 
-use app\components\ActionColumn;
-use app\components\LinkColumn;
+use app\components\grid\ActionColumn;
+use app\components\grid\LinkColumn;
 use app\modules\admin\models\User;
-use app\components\SetColumn;
+use app\components\grid\SetColumn;
 use kartik\date\DatePicker;
 use yii\helpers\Html;
 use yii\grid\GridView;
