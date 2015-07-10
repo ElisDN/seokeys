@@ -1,7 +1,8 @@
 <?php
 
-use app\widgets\grid\ActionColumn;
 use app\modules\admin\models\User;
+use app\widgets\grid\ActionColumn;
+use app\widgets\grid\LinkColumn;
 use app\widgets\grid\SetColumn;
 use kartik\date\DatePicker;
 use yii\helpers\Html;
@@ -40,7 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'created_at',
                 'format' => 'datetime',
             ],
-            'username',
+            [
+                'class' => LinkColumn::className(),
+                'attribute' => 'username',
+            ],
             'email:email',
             [
                 'class' => SetColumn::className(),
