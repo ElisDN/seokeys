@@ -46,17 +46,17 @@ AppAsset::register($this);
                         ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/user/default/login']] :
                         false,
                     !Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']] :
-                        false,
-                    !Yii::$app->user->isGuest ?
                         ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index'], 'items' => [
                             ['label' => Yii::t('app', 'ADMIN_USERS'), 'url' => ['/admin/users/index']],
                         ]] :
                         false,
                     !Yii::$app->user->isGuest ?
-                        ['label' => Yii::t('app', 'NAV_LOGOUT'),
-                            'url' => ['/user/default/logout'],
-                            'linkOptions' => ['data-method' => 'post']] :
+                        ['label' => Yii::t('app', 'NAV_PROFILE'), 'items' => [
+                            ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']],
+                            ['label' => Yii::t('app', 'NAV_LOGOUT'),
+                                'url' => ['/user/default/logout'],
+                                'linkOptions' => ['data-method' => 'post']]
+                        ]] :
                         false,
                 ]),
             ]);
