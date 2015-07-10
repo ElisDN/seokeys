@@ -1,6 +1,7 @@
 <?php
 
 use app\components\ActionColumn;
+use app\components\LinkColumn;
 use app\modules\admin\models\User;
 use app\components\SetColumn;
 use kartik\date\DatePicker;
@@ -40,7 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'created_at',
                 'format' => 'datetime',
             ],
-            'username',
+            [
+                'class' => LinkColumn::className(),
+                'attribute' => 'username',
+            ],
             'email:email',
             [
                 'class' => SetColumn::className(),
