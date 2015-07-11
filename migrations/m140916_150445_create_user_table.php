@@ -17,10 +17,10 @@ class m140916_150445_create_user_table extends Migration
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'username' => Schema::TYPE_STRING . ' NOT NULL',
-            'auth_key' => Schema::TYPE_STRING . '(32) DEFAULT NULL',
-            'email_confirm_token' => Schema::TYPE_STRING . ' DEFAULT NULL',
+            'auth_key' => Schema::TYPE_STRING . '(32) NULL DEFAULT NULL',
+            'email_confirm_token' => Schema::TYPE_STRING . ' NULL DEFAULT NULL',
             'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
-            'password_reset_token' => Schema::TYPE_STRING . ' DEFAULT NULL',
+            'password_reset_token' => Schema::TYPE_STRING . ' NULL DEFAULT NULL',
             'email' => Schema::TYPE_STRING . ' NOT NULL',
             'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 0',
         ], $tableOptions);
