@@ -9,7 +9,7 @@ $params = ArrayHelper::merge(
 
 return [
     'name' => 'SeoKeys',
-    'language'=>'ru',
+    'language'=>'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
 	'modules' => [
@@ -44,6 +44,13 @@ return [
                 '<_m:[\w\-]+>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
 			],
 		],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['user', 'admin'],
+            'itemFile' => '@app/rbac/data/items.php',
+            'assignmentFile' => '@app/rbac/data/assignments.php',
+            'ruleFile' => '@app/rbac/data/rules.php'
+        ],
         'i18n' => [
             'translations' => [
                 'app*' => [
