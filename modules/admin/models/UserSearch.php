@@ -23,7 +23,7 @@ class UserSearch extends User
         return [
             [['id', 'status'], 'integer'],
             [['username', 'email'], 'safe'],
-            [['date_from', 'date_to'], 'date', 'format' => 'Y-m-d'],
+            [['date_from', 'date_to'], 'date', 'format' => 'php:Y-m-d'],
         ];
     }
 
