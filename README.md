@@ -35,3 +35,9 @@ Fill your DB connection information in `config/common-local.php` and execute mig
 ~~~
 php yii migrate
 ~~~
+
+Sign up on site or create your first user manually:
+
+~~~
+php yii users/create
+~~~
