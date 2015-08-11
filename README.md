@@ -11,7 +11,7 @@ Installation
 Create a project:
 
 ~~~
-composer global require "fxp/composer-asset-plugin:1.0.0"
+composer global require "fxp/composer-asset-plugin:~1.0.0"
 composer create-project --prefer-dist --stability=dev elisdn/seokeys project
 ~~~
 
@@ -20,7 +20,7 @@ or clone the repository for `pull` command availability:
 ~~~
 git clone https://github.com/ElisDN/seokeys.git project
 cd project
-composer global require "fxp/composer-asset-plugin:1.0.0"
+composer global require "fxp/composer-asset-plugin:~1.0.0"
 composer install
 ~~~
 
