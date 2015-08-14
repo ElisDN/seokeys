@@ -13,16 +13,16 @@ class m140916_150445_create_user_table extends Migration
         }
 
         $this->createTable('{{%user}}', [
-            'id' => Schema::TYPE_PK,
-            'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'username' => Schema::TYPE_STRING . ' NOT NULL',
-            'auth_key' => Schema::TYPE_STRING . '(32) NULL DEFAULT NULL',
-            'email_confirm_token' => Schema::TYPE_STRING . ' NULL DEFAULT NULL',
-            'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
-            'password_reset_token' => Schema::TYPE_STRING . ' NULL DEFAULT NULL',
-            'email' => Schema::TYPE_STRING . ' NOT NULL',
-            'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 0',
+            'id' => $this->primaryKey(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
+            'username' => $this->string()->notNull(),
+            'auth_key' => $this->string(32),
+            'email_confirm_token' => $this->string(),
+            'password_hash' => $this->string()->notNull(),
+            'password_reset_token' => $this->string(),
+            'email' => $this->string()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(0),
         ], $tableOptions);
 
         $this->createIndex('idx_user_username', '{{%user}}', 'username');
