@@ -55,7 +55,8 @@ return [
     'USER_STATUS_ACTIVE' => 'Активен',
     'USER_STATUS_WAIT' => 'Ожидает подтверждения',
     'USER_VERIFY_CODE' => 'Код',
-    'USER_BUTTON_SIGNUP' => 'Войти',
+    'USER_BUTTON_SIGNUP' => 'Зарегистрироваться',
+    'USER_BUTTON_LOGIN' => 'Войти',
 
     'PLEASE_FILL_FOR_LOGIN' => 'Для входа на сайт введите данные своей учётной записи:',
     'PLEASE_FILL_FOR_SIGNUP' => 'Для регистрации заполните следующие поля:',

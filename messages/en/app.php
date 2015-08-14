@@ -56,6 +56,7 @@ return [
     'USER_STATUS_WAIT' => 'Waits of verify',
     'USER_VERIFY_CODE' => 'Verify code',
     'USER_BUTTON_SIGNUP' => 'Signup',
+    'USER_BUTTON_LOGIN' => 'Login',
 
     'PLEASE_FILL_FOR_LOGIN' => 'Please fill out the following fields to login:',
     'PLEASE_FILL_FOR_SIGNUP' => 'Please fill out the following fields to signup:',
