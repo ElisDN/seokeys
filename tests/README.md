@@ -33,6 +33,9 @@ After creating the basic application, follow these steps to prepare for the test
    codeception/bin/yii migrate
    ```
 
+   The command needs to be run in the `tests` directory.
+   The database configuration can be found at `tests/codeception/config/config.php`.
+
 4. Build the test suites:
 
    ```
@@ -89,6 +92,8 @@ from codeception site.
 2. copy `c3.php` file under your `web` directory;
 
 3. include `c3.php` file in your `index-test.php` file before application run, so it can catch needed requests.
+
+4. edit `c3.php` to update config file path (~ line 55) with `$config_file = realpath(__DIR__ . '/../tests/codeception.yml');`
 
 Configuration options that are used by remote code coverage:
 
