@@ -65,6 +65,14 @@ return [
     'PLEASE_FILL_FOR_RESET_REQUEST' => 'Введите свой Email и мы пришлём Вам инструкцию по восстановлению:',
     'PLEASE_FILL_FOR_RESET' => 'Введите новый пароль:',
 
+    'FLASH_EMAIL_CONFIRM_REQUEST' => 'Подтвердите ваш электронный адрес.',
+    'FLASH_EMAIL_CONFIRM_SUCCESS' => 'Спасибо! Ваш Email успешно подтверждён.',
+    'FLASH_EMAIL_CONFIRM_ERROR' => 'Ошибка подтверждения Email.',
+
+    'FLASH_PASSWORD_RESET_REQUEST' => 'Спасибо! На ваш Email было отправлено письмо со ссылкой на восстановление пароля.',
+    'FLASH_PASSWORD_RESET_SUCCESS' => 'Спасибо! Пароль успешно изменён.',
+    'FLASH_PASSWORD_RESET_ERROR' => 'Извините. У нас возникли проблемы с отправкой.',
+
     'ERROR_NOT_FOUND' => 'Запрошенная страница не найдена.',
 
     'ERROR_USERNAME_EXISTS' => 'Это имя пользователя уже занято.',
