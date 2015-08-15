@@ -23,11 +23,11 @@ return [
     'TITLE_LOGIN' => 'Login',
     'TITLE_PROFILE' => 'Profile',
     'TITLE_CONTACT' => 'Contact',
-    'TITLE_CHANGE_PASSWORD' => 'Change password',
-    'TITLE_RESET_PASSWORD' => 'Reset password',
+    'TITLE_PASSWORD_CHANGE' => 'Change password',
+    'TITLE_PASSWORD_RESET' => 'Reset password',
 
-    'LINK_CHANGE_PASSWORD' => 'Change password',
-    'LINK_RESET_PASSWORD' => 'Reset password',
+    'LINK_PASSWORD_CHANGE' => 'Change password',
+    'LINK_PASSWORD_RESET' => 'Reset password',
 
     'ADMIN' => 'Control panel',
 

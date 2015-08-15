@@ -6,11 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\user\models\PasswordChangeForm */
 
-$this->title = Yii::t('app', 'TITLE_CHANGE_PASSWORD');
+$this->title = Yii::t('app', 'TITLE_PASSWORD_CHANGE');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'TITLE_PROFILE'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-profile-change-password">
+<div class="user-profile-password-change">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
