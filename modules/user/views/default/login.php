@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'password')->passwordInput() ?>
             <?= $form->field($model, 'rememberMe')->checkbox() ?>
             <div style="color:#999;margin:1em 0">
-                <?= Html::a(Yii::t('app', 'LINK_RESET_PASSWORD'), ['request-password-reset']) ?>.
+                <?= Html::a(Yii::t('app', 'LINK_PASSWORD_RESET'), ['password-reset-request']) ?>.
             </div>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'USER_BUTTON_LOGIN'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>

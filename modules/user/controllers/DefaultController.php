@@ -97,7 +97,7 @@ class DefaultController extends Controller
         ]);
     }
 
-    public function actionConfirmEmail($token)
+    public function actionEmailConfirm($token)
     {
         try {
             $model = new EmailConfirmForm($token);
@@ -114,7 +114,7 @@ class DefaultController extends Controller
         return $this->goHome();
     }
 
-    public function actionRequestPasswordReset()
+    public function actionPasswordResetRequest()
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -127,12 +127,12 @@ class DefaultController extends Controller
             }
         }
 
-        return $this->render('requestPasswordResetToken', [
+        return $this->render('passwordResetRequest', [
             'model' => $model,
         ]);
     }
 
-    public function actionResetPassword($token)
+    public function actionPasswordReset($token)
     {
         try {
             $model = new PasswordResetForm($token);
@@ -146,7 +146,7 @@ class DefaultController extends Controller
             return $this->goHome();
         }
 
-        return $this->render('resetPassword', [
+        return $this->render('passwordReset', [
             'model' => $model,
         ]);
     }

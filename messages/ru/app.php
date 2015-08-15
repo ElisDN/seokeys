@@ -23,11 +23,11 @@ return [
     'TITLE_LOGIN' => 'Вход',
     'TITLE_PROFILE' => 'Профиль',
     'TITLE_CONTACT' => 'Обратная связь',
-    'TITLE_CHANGE_PASSWORD' => 'Смена пароля',
-    'TITLE_RESET_PASSWORD' => 'Восстановление пароля',
+    'TITLE_PASSWORD_CHANGE' => 'Смена пароля',
+    'TITLE_PASSWORD_RESET' => 'Восстановление пароля',
 
-    'LINK_CHANGE_PASSWORD' => 'Сменить пароль',
-    'LINK_RESET_PASSWORD' => 'Восстановить пароль',
+    'LINK_PASSWORD_CHANGE' => 'Сменить пароль',
+    'LINK_PASSWORD_RESET' => 'Восстановить пароль',
 
     'ADMIN' => 'Панель управления',
 

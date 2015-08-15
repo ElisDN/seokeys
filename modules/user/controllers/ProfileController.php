@@ -46,7 +46,7 @@ class ProfileController extends Controller
         }
     }
 
-    public function actionChangePassword()
+    public function actionPasswordChange()
     {
         $user = $this->findModel();
         $model = new PasswordChangeForm($user);
@@ -54,7 +54,7 @@ class ProfileController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->changePassword()) {
             return $this->redirect(['index']);
         } else {
-            return $this->render('changePassword', [
+            return $this->render('passwordChange', [
                 'model' => $model,
             ]);
         }
