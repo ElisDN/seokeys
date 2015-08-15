@@ -3,7 +3,6 @@ coverage:
     enabled: true
     whitelist:
         include:
-            - ../commands/*
             - ../components/*
             - ../mail/*
             - ../modules/*

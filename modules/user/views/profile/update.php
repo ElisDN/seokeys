@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
         <div class="form-group">
-            <?= Html::submitButton(Module::t('app', 'BUTTON_SAVE'), ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton(Module::t('app', 'BUTTON_SAVE'), ['class' => 'btn btn-primary', 'name' => 'update-button']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>
