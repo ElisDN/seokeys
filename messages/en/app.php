@@ -63,6 +63,14 @@ return [
     'PLEASE_FILL_FOR_RESET_REQUEST' => 'Please fill out your email. A link to reset password will be sent there.',
     'PLEASE_FILL_FOR_RESET' => 'Please choose your new password:',
 
+    'FLASH_EMAIL_CONFIRM_REQUEST' => 'Please confirm your Email.',
+    'FLASH_EMAIL_CONFIRM_SUCCESS' => 'Thanks! Your Email is confirmed.',
+    'FLASH_EMAIL_CONFIRM_ERROR' => 'Error! Email confirm is not sent.',
+
+    'FLASH_PASSWORD_RESET_REQUEST' => 'Follow the link on mail to reset your password.',
+    'FLASH_PASSWORD_RESET_SUCCESS' => 'Thanks! Your passwords is changed.',
+    'FLASH_PASSWORD_RESET_ERROR' => 'Error! Email confirm is not sent.',
+
     'ERROR_NOT_FOUND' => 'The requested page does not exist.',
 
     'ERROR_USERNAME_EXISTS' => 'This username already exists.',
