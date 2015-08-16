@@ -5,13 +5,16 @@ namespace app\modules\admin\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use yii\helpers\ArrayHelper;
 
 /**
  * UserSearch represents the model behind the search form about `app\modules\admin\models\User`.
  */
-class UserSearch extends User
+class UserSearch extends Model
 {
+    public $id;
+    public $username;
+    public $email;
+    public $status;
     public $date_from;
     public $date_to;
 
@@ -30,18 +33,15 @@ class UserSearch extends User
     /**
      * @inheritdoc
      */
-    public function scenarios()
-    {
-        // bypass scenarios() implementation in the parent class
-        return Model::scenarios();
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
-        return ArrayHelper::merge(parent::attributeLabels(), [
+        return [
+            'id' => 'ID',
+            'created_at' => Yii::t('app', 'USER_CREATED'),
+            'updated_at' => Yii::t('app', 'USER_UPDATED'),
+            'username' => Yii::t('app', 'USER_USERNAME'),
+            'email' => Yii::t('app', 'USER_EMAIL'),
+            'status' => Yii::t('app', 'USER_STATUS'),
             'date_from' => Yii::t('app', 'USER_DATE_FROM'),
             'date_to' => Yii::t('app', 'USER_DATE_TO'),
         ];
@@ -68,8 +68,7 @@ class UserSearch extends User
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
 
@@ -81,8 +80,8 @@ class UserSearch extends User
         $query
             ->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['>=', 'created_at', $this->date_from ? strtotime(date('Y-m-d 00:00:00', strtotime($this->date_from))) : null])
-            ->andFilterWhere(['<=', 'created_at', $this->date_to ? strtotime(date('Y-m-d 23:59:59', strtotime($this->date_to))) : null]);
+            ->andFilterWhere(['>=', 'created_at', $this->date_from ? strtotime($this->date_from . ' 00:00:00') : null])
+            ->andFilterWhere(['<=', 'created_at', $this->date_to ? strtotime($this->date_to . ' 23:59:59') : null]);
 
         return $dataProvider;
     }
