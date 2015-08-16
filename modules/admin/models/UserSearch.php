@@ -42,9 +42,9 @@ class UserSearch extends User
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'date_from' => 'Дата с',
-            'date_to' => 'Дата по',
-        ]);
+            'date_from' => Yii::t('app', 'USER_DATE_FROM'),
+            'date_to' => Yii::t('app', 'USER_DATE_TO'),
+        ];
     }
 
     /**
