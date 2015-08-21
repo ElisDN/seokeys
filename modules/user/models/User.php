@@ -95,8 +95,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getStatusName()
     {
-        $statuses = self::getStatusesArray();
-        return isset($statuses[$this->status]) ? $statuses[$this->status] : '';
+        return ArrayHelper::getValue(self::getStatusesArray(), $this->status);
     }
 
     public static function getStatusesArray()
