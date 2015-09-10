@@ -2,6 +2,17 @@
 
 $config = [
     'id' => 'app',
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
+        'main' => [
+            'class' => 'app\modules\main\Module',
+        ],
+        'user' => [
+            'class' => 'app\modules\user\Module',
+        ],
+    ],
     'components' => [
 		'user' => [
 			'identityClass' => 'app\modules\user\models\User',
