@@ -1,7 +1,8 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\modules\admin\models\search;
 
+use app\modules\admin\models\User;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
