@@ -27,10 +27,10 @@ class User extends \app\modules\user\models\User
 
     public function scenarios()
     {
-        return ArrayHelper::merge(parent::scenarios(), [
-            self::SCENARIO_ADMIN_CREATE => ['username', 'email', 'status', 'newPassword', 'newPasswordRepeat'],
-            self::SCENARIO_ADMIN_UPDATE=> ['username', 'email', 'status', 'newPassword', 'newPasswordRepeat'],
-        ]);
+        $scenarios = parent::scenarios();
+        $scenarios[self::SCENARIO_ADMIN_CREATE] = ['username', 'email', 'status', 'newPassword', 'newPasswordRepeat'];
+        $scenarios[self::SCENARIO_ADMIN_UPDATE] = ['username', 'email', 'status', 'newPassword', 'newPasswordRepeat'];
+        return $scenarios;
     }
 
     /**
