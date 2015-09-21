@@ -14,19 +14,19 @@ $config = [
         ],
     ],
     'components' => [
-		'user' => [
-			'identityClass' => 'app\modules\user\models\User',
-			'enableAutoLogin' => true,
-		],
-		'errorHandler' => [
-			'errorAction' => 'main/default/error',
-		],
-		'request' => [
-			'cookieValidationKey' => '',
-		],
-		'log' => [
-			'traceLevel' => YII_DEBUG ? 3 : 0,
-		],
+        'user' => [
+            'identityClass' => 'app\modules\user\models\User',
+            'enableAutoLogin' => true,
+        ],
+        'errorHandler' => [
+            'errorAction' => 'main/default/error',
+        ],
+        'request' => [
+            'cookieValidationKey' => '',
+        ],
+        'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+        ],
     ],
 ];
 

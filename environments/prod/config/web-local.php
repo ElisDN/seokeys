@@ -2,9 +2,9 @@
 
 return [
     'components' => [
-		'request' => [
-			'cookieValidationKey' => '',
-		],
+        'request' => [
+            'cookieValidationKey' => '',
+        ],
         'assetManager' => [
             'linkAssets' => true,
         ],
