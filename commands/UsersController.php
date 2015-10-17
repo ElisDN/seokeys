@@ -2,7 +2,7 @@
 
 namespace app\commands;
 
-use app\modules\user\models\User;
+use app\models\User;
 use yii\base\Model;
 use yii\console\Controller;
 use yii\console\Exception;
@@ -63,7 +63,7 @@ class UsersController extends Controller
     /**
      * @param string $username
      * @throws \yii\console\Exception
-     * @return User the loaded model
+     * @return \app\models\User the loaded model
      */
     private function findModel($username)
     {
