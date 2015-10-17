@@ -73,6 +73,8 @@ return [
     'FLASH_PASSWORD_RESET_SUCCESS' => 'Спасибо! Пароль успешно изменён.',
     'FLASH_PASSWORD_RESET_ERROR' => 'Извините. У нас возникли проблемы с отправкой.',
 
+    'FLASH_PASSWORD_CHANGE_SUCCESS' => 'Пароль успешно изменён.',
+
     'ERROR_NOT_FOUND' => 'Запрошенная страница не найдена.',
 
     'ERROR_USERNAME_EXISTS' => 'Это имя пользователя уже занято.',
