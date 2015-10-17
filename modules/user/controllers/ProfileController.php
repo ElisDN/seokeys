@@ -52,6 +52,7 @@ class ProfileController extends Controller
         $model = new PasswordChangeForm($user);
 
         if ($model->load(Yii::$app->request->post()) && $model->changePassword()) {
+            Yii::$app->getSession()->setFlash('success', Yii::t('app', 'FLASH_PASSWORD_CHANGE_SUCCESS'));
             return $this->redirect(['index']);
         } else {
             return $this->render('passwordChange', [

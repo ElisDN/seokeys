@@ -73,6 +73,8 @@ return [
     'FLASH_PASSWORD_RESET_SUCCESS' => 'Thanks! Your passwords is changed.',
     'FLASH_PASSWORD_RESET_ERROR' => 'Error! Email confirm is not sent.',
 
+    'FLASH_PASSWORD_CHANGE_SUCCESS' => 'Your passwords is changed.',
+
     'ERROR_NOT_FOUND' => 'The requested page does not exist.',
 
     'ERROR_USERNAME_EXISTS' => 'This username already exists.',
