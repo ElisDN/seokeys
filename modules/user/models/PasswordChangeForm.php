@@ -3,7 +3,6 @@
 namespace app\modules\user\models;
 
 use app\models\User;
-use yii\base\InvalidParamException;
 use yii\base\Model;
 use Yii;
 
@@ -24,13 +23,9 @@ class PasswordChangeForm extends Model
     /**
      * @param User $user
      * @param array $config
-     * @throws \yii\base\InvalidParamException
      */
     public function __construct(User $user, $config = [])
     {
-        if (empty($user)) {
-            throw new InvalidParamException('User is empty.');
-        }
         $this->_user = $user;
         parent::__construct($config);
     }
