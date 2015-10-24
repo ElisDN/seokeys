@@ -84,6 +84,7 @@ return [
     'ERROR_PROFILE_BLOCKED' => 'Ваш аккаунт заблокирован.',
     'ERROR_PROFILE_NOT_CONFIRMED' => 'Ваш аккаунт не подтвержден.',
     'ERROR_USER_NOT_FOUND_BY_EMAIL' => 'Пользователь с таким адресом не найден.',
+    'ERROR_TOKEN_IS_SENT' => 'Токен уже отправлен.',
 
     'HELLO {username}' => 'Здравствуйте, {username}!',
     'FOLLOW_TO_RESET_PASSWORD' => 'Для смены пароля пройдите по ссылке:',

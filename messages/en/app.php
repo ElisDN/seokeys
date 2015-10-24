@@ -84,6 +84,7 @@ return [
     'ERROR_PROFILE_BLOCKED' => 'Your profile is blocked.',
     'ERROR_PROFILE_NOT_CONFIRMED' => 'Your profile is not confirmed.',
     'ERROR_USER_NOT_FOUND_BY_EMAIL' => 'There is no user with such email.',
+    'ERROR_TOKEN_IS_SENT' => 'Email is already send.',
 
     'HELLO {username}' => 'Hello, {username}!',
     'FOLLOW_TO_RESET_PASSWORD' => 'Follow the link below to reset your password:',
