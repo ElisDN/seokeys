@@ -5,7 +5,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model \app\modules\user\models\ProfileUpdateForm */
+/* @var $model \app\modules\user\models\form\ProfileUpdateForm */
 
 $this->title = Module::t('app', 'TITLE_PROFILE_UPDATE');
 $this->params['breadcrumbs'][] = ['label' => Module::t('app', 'TITLE_PROFILE'), 'url' => ['index']];

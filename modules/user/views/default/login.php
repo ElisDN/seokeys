@@ -5,7 +5,7 @@ use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \app\modules\user\models\LoginForm */
+/* @var $model \app\modules\user\models\form\LoginForm */
 
 $this->title = Module::t('app', 'TITLE_LOGIN');
 $this->params['breadcrumbs'][] = $this->title;
