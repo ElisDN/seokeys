@@ -9,6 +9,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
 {
     public $controllerNamespace = 'app\modules\user\controllers';
 
+    public $passwordResetTokenExpire = 3600;
+
     public function bootstrap($app)
     {
         if ($app instanceof ConsoleApplication) {
