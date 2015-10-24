@@ -2,9 +2,12 @@
 
 namespace app\modules\admin;
 
+use yii\base\BootstrapInterface;
 use yii\filters\AccessControl;
+use yii\console\Application as ConsoleApplication;
+use Yii;
 
-class Module extends \yii\base\Module
+class Module extends \yii\base\Module implements BootstrapInterface
 {
     public $controllerNamespace = 'app\modules\admin\controllers';
 
@@ -23,10 +26,29 @@ class Module extends \yii\base\Module
         ];
     }
 
-    public function init()
+    public function bootstrap($app)
     {
-        parent::init();
+        if ($app instanceof ConsoleApplication) {
+            $this->controllerNamespace = 'app\modules\user\commands';
+        }
+        $this->registerTranslations();
+    }
 
-        // custom initialization code goes here
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['modules/admin/*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'en-US',
+            'forceTranslation' => true,
+            'basePath' => '@app/modules/admin/messages',
+            'fileMap' => [
+                'modules/admin/app' => 'app.php',
+            ],
+        ];
+    }
+
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('modules/admin/' . $category, $message, $params, $language);
     }
 }

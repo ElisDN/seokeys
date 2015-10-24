@@ -2,6 +2,7 @@
 
 namespace app\modules\user\models;
 
+use app\modules\user\Module;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 use Yii;
@@ -40,7 +41,7 @@ class ProfileUpdateForm extends Model
                 'email',
                 'unique',
                 'targetClass' => User::className(),
-                'message' => Yii::t('app', 'ERROR_EMAIL_EXISTS'),
+                'message' => Module::t('app', 'ERROR_EMAIL_EXISTS'),
                 'filter' => function (ActiveQuery $query) {
                         $query->andWhere(['<>', 'id', $this->_user->id]);
                     },
