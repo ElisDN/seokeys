@@ -13,7 +13,9 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
-        'app\modules\user\Bootstrap'
+        'app\modules\admin\Bootstrap',
+        'app\modules\main\Bootstrap',
+        'app\modules\user\Bootstrap',
     ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

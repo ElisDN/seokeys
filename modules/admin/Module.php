@@ -3,6 +3,7 @@
 namespace app\modules\admin;
 
 use yii\filters\AccessControl;
+use Yii;
 
 class Module extends \yii\base\Module
 {
@@ -23,10 +24,8 @@ class Module extends \yii\base\Module
         ];
     }
 
-    public function init()
+    public static function t($category, $message, $params = [], $language = null)
     {
-        parent::init();
-
-        // custom initialization code goes here
+        return Yii::t('modules/admin/' . $category, $message, $params, $language);
     }
 }
