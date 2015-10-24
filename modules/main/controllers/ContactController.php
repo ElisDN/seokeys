@@ -2,7 +2,7 @@
 
 namespace app\modules\main\controllers;
 
-use app\modules\main\models\ContactForm;
+use app\modules\main\forms\ContactForm;
 use yii\web\Controller;
 use Yii;
 

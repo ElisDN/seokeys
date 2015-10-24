@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\models\search;
+namespace app\modules\admin\forms\search;
 
 use app\modules\admin\models\User;
 use app\modules\admin\Module;

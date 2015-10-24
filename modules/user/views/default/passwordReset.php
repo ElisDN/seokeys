@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\modules\user\models\PasswordResetForm */
+/* @var $model \app\modules\user\forms\PasswordResetForm */
 
 $this->title = Module::t('app', 'TITLE_PASSWORD_RESET');
 $this->params['breadcrumbs'][] = $this->title;
