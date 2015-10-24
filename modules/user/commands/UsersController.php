@@ -1,6 +1,6 @@
 <?php
 
-namespace app\commands;
+namespace app\modules\user\commands;
 
 use app\modules\user\models\User;
 use yii\base\Model;
@@ -8,8 +8,14 @@ use yii\console\Controller;
 use yii\console\Exception;
 use yii\helpers\Console;
 
+/**
+ * Interactive console user manager
+ */
 class UsersController extends Controller
 {
+    /**
+     * Creates new user
+     */
     public function actionCreate()
     {
         $model = new User();
@@ -24,13 +30,19 @@ class UsersController extends Controller
         $this->log($model->save());
     }
 
-    public function actionRemove()
+    /**
+     * Removes user by username
+     */
+    public function actionDelete()
     {
         $username = $this->prompt('Username:', ['required' => true]);
         $model = $this->findModel($username);
         $this->log($model->delete());
     }
 
+    /**
+     * Activates user
+     */
     public function actionActivate()
     {
         $username = $this->prompt('Username:', ['required' => true]);
@@ -40,6 +52,9 @@ class UsersController extends Controller
         $this->log($model->save());
     }
 
+    /**
+     * Changes user password
+     */
     public function actionChangePassword()
     {
         $username = $this->prompt('Username:', ['required' => true]);
@@ -93,6 +108,6 @@ class UsersController extends Controller
         } else {
             $this->stderr('Error!', Console::FG_RED, Console::BOLD);
         }
-        echo PHP_EOL;
+        $this->stdout(PHP_EOL);
     }
 }
