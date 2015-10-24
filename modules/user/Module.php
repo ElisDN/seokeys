@@ -2,14 +2,17 @@
 
 namespace app\modules\user;
 
-class Module extends \yii\base\Module
+use yii\base\BootstrapInterface;
+use yii\console\Application as ConsoleApplication;
+
+class Module extends \yii\base\Module implements BootstrapInterface
 {
     public $controllerNamespace = 'app\modules\user\controllers';
 
-    public function init()
+    public function bootstrap($app)
     {
-        parent::init();
-
-        // custom initialization code goes here
+        if ($app instanceof ConsoleApplication) {
+            $this->controllerNamespace = 'app\modules\user\commands';
+        }
     }
 }

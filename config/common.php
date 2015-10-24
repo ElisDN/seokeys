@@ -11,7 +11,10 @@ return [
     'name' => 'SeoKeys',
     'language'=>'ru-RU',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        function () { return Yii::$app->getModule('user'); },
+    ],
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
