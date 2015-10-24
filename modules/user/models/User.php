@@ -3,6 +3,7 @@
 namespace app\modules\user\models;
 
 use app\modules\user\helpers\UserHelper;
+use app\modules\user\models\query\UserQuery;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -36,6 +37,14 @@ class User extends ActiveRecord implements IdentityInterface
     public static function tableName()
     {
         return '{{%user}}';
+    }
+
+    /**
+     * @return UserQuery
+     */
+    public static function find()
+    {
+        return new UserQuery(get_called_class());
     }
 
     /**
