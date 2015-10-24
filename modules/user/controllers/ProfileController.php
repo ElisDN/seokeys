@@ -3,7 +3,7 @@
 namespace app\modules\user\controllers;
 
 use app\modules\user\models\PasswordChangeForm;
-use app\models\User;
+use app\modules\user\models\User;
 use app\modules\user\models\ProfileUpdateForm;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -63,7 +63,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * @return \app\models\User the loaded model
+     * @return User the loaded model
      */
     private function findModel()
     {

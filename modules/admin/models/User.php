@@ -5,7 +5,7 @@ namespace app\modules\admin\models;
 use yii\helpers\ArrayHelper;
 use Yii;
 
-class User extends \app\models\User
+class User extends \app\modules\user\models\User
 {
     const SCENARIO_ADMIN_CREATE = 'adminCreate';
     const SCENARIO_ADMIN_UPDATE = 'adminUpdate';
