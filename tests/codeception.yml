@@ -6,15 +6,19 @@ coverage:
             - ../components/*
             - ../mail/*
             - ../modules/*
-            - ../messages/en/*
+            - ../views/*
+        exclude:
+            - ../modules/admin/messages/*
+            - ../modules/main/messages/*
+            - ../modules/user/messages/*
     blacklist:
         include:
             - ../assets/*
             - ../config/*
             - ../runtime/*
             - ../environments/*
+            - ../messages/*
             - ../vendor/*
-            - ../views/*
             - ../web/*
             - ../tests/*
 paths:
