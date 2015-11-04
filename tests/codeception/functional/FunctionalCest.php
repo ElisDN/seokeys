@@ -15,7 +15,7 @@ class FunctionalCest
 
     protected function loginAsUser(FunctionalTester $I)
     {
-        $this->login($I, 'admin', 'adminpass');
+        $this->login($I, 'user', 'userpass');
     }
 
     protected function login(FunctionalTester $I, $name, $password)

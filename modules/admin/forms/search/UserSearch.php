@@ -18,6 +18,7 @@ class UserSearch extends Model
     public $username;
     public $email;
     public $status;
+    public $role;
     public $date_from;
     public $date_to;
 
@@ -28,7 +29,7 @@ class UserSearch extends Model
     {
         return [
             [['id', 'status'], 'integer'],
-            [['username', 'email'], 'safe'],
+            [['username', 'email', 'role'], 'safe'],
             [['date_from', 'date_to'], 'date', 'format' => 'php:Y-m-d'],
         ];
     }
@@ -78,6 +79,7 @@ class UserSearch extends Model
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => $this->status,
+            'role' => $this->role,
         ]);
 
         $query

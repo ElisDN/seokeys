@@ -63,11 +63,7 @@ return [
             ],
         ],
         'authManager' => [
-            'class' => 'yii\rbac\PhpManager',
-            'defaultRoles' => ['user', 'admin'],
-            'itemFile' => '@app/rbac/data/items.php',
-            'assignmentFile' => '@app/rbac/data/assignments.php',
-            'ruleFile' => '@app/rbac/data/rules.php'
+            'class' => 'app\modules\user\components\AuthManager',
         ],
         'i18n' => [
             'translations' => [

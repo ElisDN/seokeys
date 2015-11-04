@@ -10,6 +10,7 @@ return [
         'created_at' => '1439635619',
         'updated_at' => '1439635619',
         'email' => 'confirm@example.com',
+        'role' => 'user',
         'status' => 2,
     ],
 ];

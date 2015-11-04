@@ -26,7 +26,7 @@ class SignupFormTest extends DbTestCase
 
     public function testCorrectSignup()
     {
-        $model = new SignupForm([
+        $model = new SignupForm('user', [
             'username' => 'some_username',
             'email' => 'some_email@example.com',
             'password' => 'some_password',
@@ -39,6 +39,7 @@ class SignupFormTest extends DbTestCase
 
         expect('username should be correct', $user->username)->equals('some_username');
         expect('email should be correct', $user->email)->equals('some_email@example.com');
+        expect('role should be correct', $user->role)->equals('user');
         expect('password should be correct', $user->validatePassword('some_password'))->true();
 
         expect('email file should exist', file_exists($this->getMessageFile()))->true();
@@ -49,7 +50,7 @@ class SignupFormTest extends DbTestCase
 
     public function testNotCorrectSignup()
     {
-        $model = new SignupForm([
+        $model = new SignupForm('user', [
             'username' => 'admin',
             'email' => 'admin@example.com',
             'password' => 'some_password',

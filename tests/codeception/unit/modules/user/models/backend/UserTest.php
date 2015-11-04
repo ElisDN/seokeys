@@ -115,12 +115,14 @@ class UserTest extends DbTestCase
             'adminCreate' => ['adminCreate', [
                 'username',
                 'email',
+                'role',
                 'status',
                 'newPassword',
                 'newPasswordRepeat',
             ]],
             'adminUpdate' => ['adminUpdate', [
                 'username',
+                'role',
                 'email',
                 'status',
                 'newPassword',

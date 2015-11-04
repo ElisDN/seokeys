@@ -5,6 +5,7 @@
 
 use app\widgets\Alert;
 use yii\helpers\Html;
+use app\modules\admin\rbac\Rbac as AdminRbac;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -32,7 +33,7 @@ echo Nav::widget([
         Yii::$app->user->isGuest ?
             ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/user/default/login']] :
             false,
-        !Yii::$app->user->isGuest ?
+        Yii::$app->user->can(AdminRbac::PERMISSION_ADMIN_PANEL) ?
             ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']] :
             false,
         !Yii::$app->user->isGuest ?

@@ -23,6 +23,7 @@ use yii\web\IdentityInterface;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
+ * @property string $role
  * @property integer $status
  */
 class User extends ActiveRecord implements IdentityInterface
@@ -67,6 +68,8 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'integer'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())],
+
+            ['role', 'string', 'max' => 64],
         ];
     }
 
@@ -82,6 +85,7 @@ class User extends ActiveRecord implements IdentityInterface
             'username' => Module::t('module', 'USER_USERNAME'),
             'email' => Module::t('module', 'USER_EMAIL'),
             'status' => Module::t('module', 'USER_STATUS'),
+            'role' => Module::t('module', 'USER_ROLE'),
         ];
     }
 

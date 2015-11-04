@@ -85,7 +85,8 @@ class DefaultController extends Controller
 
     public function actionSignup()
     {
-        $model = new SignupForm();
+        /** @var SignupForm $model */
+        $model = Yii::createObject(SignupForm::class);
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_EMAIL_CONFIRM_REQUEST'));

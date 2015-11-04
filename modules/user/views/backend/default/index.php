@@ -2,10 +2,12 @@
 
 use app\modules\user\Module;
 use app\modules\user\models\backend\User;
+use app\modules\user\widgets\backend\grid\RoleColumn;
 use app\widgets\grid\ActionColumn;
 use app\widgets\grid\LinkColumn;
 use app\widgets\grid\SetColumn;
 use kartik\date\DatePicker;
+use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\helpers\Html;
 
@@ -59,6 +61,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     User::STATUS_WAIT => 'warning',
                     User::STATUS_BLOCKED => 'default',
                 ],
+            ],
+            [
+                'class' => RoleColumn::className(),
+                'filter' => ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description'),
+                'attribute' => 'role',
             ],
 
             ['class' => ActionColumn::className()],
