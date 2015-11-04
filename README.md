@@ -37,5 +37,5 @@ php yii migrate
 Sign up on site or create your first user manually:
 
 ~~~
-php yii users/create
+php yii user/users/create
 ~~~
