@@ -6,6 +6,7 @@ use app\modules\user\forms\PasswordResetForm;
 use app\modules\user\forms\PasswordResetRequestForm;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
+use Yii;
 
 class Bootstrap implements BootstrapInterface
 {
@@ -19,11 +20,10 @@ class Bootstrap implements BootstrapInterface
     {
         $app->i18n->translations['modules/user/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
-            'sourceLanguage' => 'en-US',
             'forceTranslation' => true,
             'basePath' => '@app/modules/user/messages',
             'fileMap' => [
-                'modules/user/app' => 'app.php',
+                'user' => 'app.php',
             ],
         ];
     }

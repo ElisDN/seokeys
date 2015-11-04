@@ -3,7 +3,6 @@
 namespace app\modules\user\forms;
 
 use app\modules\user\models\User;
-use app\modules\user\Module;
 use yii\base\InvalidParamException;
 use yii\base\Model;
 use Yii;
@@ -57,7 +56,7 @@ class PasswordResetForm extends Model
     public function attributeLabels()
     {
         return [
-            'password' => Module::t('app', 'USER_NEW_PASSWORD'),
+            'password' => Yii::t('user', 'USER_NEW_PASSWORD'),
         ];
     }
 

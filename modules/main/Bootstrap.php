@@ -17,11 +17,10 @@ class Bootstrap implements BootstrapInterface
     {
         $app->i18n->translations['modules/main/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
-            'sourceLanguage' => 'en-US',
             'forceTranslation' => true,
             'basePath' => '@app/modules/main/messages',
             'fileMap' => [
-                'modules/main/app' => 'app.php',
+                'main' => 'app.php',
             ],
         ];
     }

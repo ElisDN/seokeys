@@ -1,14 +1,13 @@
 <?php
 
-use app\modules\user\Module;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model \app\modules\user\forms\ProfileUpdateForm */
 
-$this->title = Module::t('app', 'TITLE_PROFILE_UPDATE');
-$this->params['breadcrumbs'][] = ['label' => Module::t('app', 'TITLE_PROFILE'), 'url' => ['index']];
+$this->title = Yii::t('user', 'TITLE_PROFILE_UPDATE');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('user', 'TITLE_PROFILE'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-profile-update">
@@ -22,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
         <div class="form-group">
-            <?= Html::submitButton(Module::t('app', 'BUTTON_SAVE'), ['class' => 'btn btn-primary', 'name' => 'update-button']) ?>
+            <?= Html::submitButton(Yii::t('user', 'BUTTON_SAVE'), ['class' => 'btn btn-primary', 'name' => 'update-button']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

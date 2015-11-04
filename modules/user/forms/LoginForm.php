@@ -3,7 +3,6 @@
 namespace app\modules\user\forms;
 
 use app\modules\user\models\User;
-use app\modules\user\Module;
 use Yii;
 use yii\base\Model;
 
@@ -39,9 +38,9 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Module::t('app', 'USER_USERNAME'),
-            'password' => Module::t('app', 'USER_PASSWORD'),
-            'rememberMe' => Module::t('app', 'USER_REMEMBER_ME'),
+            'username' => Yii::t('user', 'USER_USERNAME'),
+            'password' => Yii::t('user', 'USER_PASSWORD'),
+            'rememberMe' => Yii::t('user', 'USER_REMEMBER_ME'),
         ];
     }
 
@@ -58,11 +57,11 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError('password', Module::t('app', 'ERROR_WRONG_USERNAME_OR_PASSWORD'));
+                $this->addError('password', Yii::t('user', 'ERROR_WRONG_USERNAME_OR_PASSWORD'));
             } elseif ($user && $user->status == User::STATUS_BLOCKED) {
-                $this->addError('username', Module::t('app', 'ERROR_PROFILE_BLOCKED'));
+                $this->addError('username', Yii::t('user', 'ERROR_PROFILE_BLOCKED'));
             } elseif ($user && $user->status == User::STATUS_WAIT) {
-                $this->addError('username', Module::t('app', 'ERROR_PROFILE_NOT_CONFIRMED'));
+                $this->addError('username', Yii::t('user', 'ERROR_PROFILE_NOT_CONFIRMED'));
             }
         }
     }

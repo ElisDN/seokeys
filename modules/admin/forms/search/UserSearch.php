@@ -3,8 +3,7 @@
 namespace app\modules\admin\forms\search;
 
 use app\modules\admin\models\User;
-use app\modules\admin\Module;
-use app\modules\user\Module as UserModule;
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
@@ -39,13 +38,13 @@ class UserSearch extends Model
     {
         return [
             'id' => 'ID',
-            'created_at' => UserModule::t('app', 'USER_CREATED'),
-            'updated_at' => UserModule::t('app', 'USER_UPDATED'),
-            'username' => UserModule::t('app', 'USER_USERNAME'),
-            'email' => UserModule::t('app', 'USER_EMAIL'),
-            'status' => UserModule::t('app', 'USER_STATUS'),
-            'date_from' => Module::t('app', 'USER_DATE_FROM'),
-            'date_to' => Module::t('app', 'USER_DATE_TO'),
+            'created_at' => Yii::t('user', 'USER_CREATED'),
+            'updated_at' => Yii::t('user', 'USER_UPDATED'),
+            'username' => Yii::t('user', 'USER_USERNAME'),
+            'email' => Yii::t('user', 'USER_EMAIL'),
+            'status' => Yii::t('user', 'USER_STATUS'),
+            'date_from' => Yii::t('admin', 'USER_DATE_FROM'),
+            'date_to' => Yii::t('admin', 'USER_DATE_TO'),
         ];
     }
 
