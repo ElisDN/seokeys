@@ -47,12 +47,9 @@ return [
         ],
         'i18n' => [
             'translations' => [
-                'app*' => [
+                'app' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'forceTranslation' => true,
-                    'fileMap' => [
-                        'app' => 'app.php',
-                    ],
                 ],
             ],
         ],
