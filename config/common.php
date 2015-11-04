@@ -13,9 +13,9 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
-        function () { return Yii::$app->getModule('admin'); },
-        function () { return Yii::$app->getModule('main'); },
-        function () { return Yii::$app->getModule('user'); },
+        'app\modules\admin\Bootstrap',
+        'app\modules\main\Bootstrap',
+        'app\modules\user\Bootstrap',
     ],
     'modules' => [
         'admin' => [

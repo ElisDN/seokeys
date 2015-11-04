@@ -1,15 +1,13 @@
 <?php
 
-use app\modules\admin\Module;
 use yii\helpers\Html;
-
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\User */
 
-$this->title = Module::t('app', 'TITLE_CREATE');
-$this->params['breadcrumbs'][] = ['label' => Module::t('app', 'ADMIN'), 'url' => ['default/index']];
-$this->params['breadcrumbs'][] = ['label' => Module::t('app', 'ADMIN_USERS'), 'url' => ['index']];
+$this->title = Yii::t('admin', 'TITLE_CREATE');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'ADMIN'), 'url' => ['default/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'ADMIN_USERS'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-create">

@@ -1,16 +1,15 @@
 <?php
 
-use app\modules\admin\Module;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\User */
 
 $this->title = $model->username;
-$this->params['breadcrumbs'][] = ['label' => Module::t('app', 'ADMIN'), 'url' => ['default/index']];
-$this->params['breadcrumbs'][] = ['label' => Module::t('app', 'ADMIN_USERS'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'ADMIN'), 'url' => ['default/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'ADMIN_USERS'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->username, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Module::t('app', 'TITLE_UPDATE');
+$this->params['breadcrumbs'][] = Yii::t('admin', 'TITLE_UPDATE');
 ?>
 <div class="user-update">
 
