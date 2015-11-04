@@ -2,6 +2,7 @@
 
 namespace app\modules\admin;
 
+use app\modules\admin\rbac\Rbac;
 use yii\filters\AccessControl;
 use Yii;
 
@@ -17,7 +18,7 @@ class Module extends \yii\base\Module
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => [Rbac::PERMISSION_ADMIN_PANEL],
                     ],
                 ],
             ],

@@ -15,7 +15,7 @@ class AcceptanceCest
 
     protected function loginAsUser(AcceptanceTester $I)
     {
-        $this->login($I, 'admin', 'adminpass');
+        $this->login($I, 'user', 'userpass');
     }
 
     protected function login(AcceptanceTester $I, $name = 'admin', $password = 'adminpass')

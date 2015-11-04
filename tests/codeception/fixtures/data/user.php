@@ -10,6 +10,19 @@ return [
         'created_at' => '1439635619',
         'updated_at' => '1439635619',
         'email' => 'admin@example.com',
+        'role' => 'admin',
+        'status' => 1,
+    ],
+    [
+        'username' => 'user',
+        'auth_key' => 'eckb2DLY9uv6r1hM6D73eoHPvv6BfnXt',
+        'password_hash' => '$2y$13$vPMXXX.BIWfyNsYWWWNMPu.YG1s3ErDVAovSOcA8qrbg3QNC35GBG',
+        'password_reset_token' => null,
+        'email_confirm_token' => null,
+        'created_at' => '1439635619',
+        'updated_at' => '1439635619',
+        'email' => 'user@example.com',
+        'role' => 'user',
         'status' => 1,
     ],
     [
@@ -21,6 +34,7 @@ return [
         'created_at' => '1439635619',
         'updated_at' => '1439635619',
         'email' => 'reset@example.com',
+        'role' => 'user',
         'status' => 1,
     ],
 ];

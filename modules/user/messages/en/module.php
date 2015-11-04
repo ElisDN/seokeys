@@ -38,6 +38,7 @@ return [
     'USER_CREATED' => 'Created at',
     'USER_UPDATED' => 'Updated at',
     'USER_EMAIL' => 'Email',
+    'USER_ROLE' => 'Role',
     'USER_STATUS' => 'Status',
     'USER_STATUS_BLOCKED' => 'Blocked',
     'USER_STATUS_ACTIVE' => 'Active',
