@@ -13,9 +13,6 @@ class Bootstrap implements BootstrapInterface
             'class' => 'yii\i18n\PhpMessageSource',
             'forceTranslation' => true,
             'basePath' => '@app/modules/main/messages',
-            'fileMap' => [
-                'main' => 'app.php',
-            ],
         ];
     }
 }
