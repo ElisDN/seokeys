@@ -19,10 +19,13 @@ class Bootstrap implements BootstrapInterface
 
     public function registerTranslations(Application $app)
     {
-        $app->i18n->translations['user'] = [
+        $app->i18n->translations['modules/user/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'forceTranslation' => true,
             'basePath' => '@app/modules/user/messages',
+            'fileMap' => [
+                'modules/user/module' => 'module.php',
+            ],
         ];
     }
 

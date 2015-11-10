@@ -5,9 +5,13 @@ namespace app\modules\user\controllers;
 use app\modules\user\forms\PasswordChangeForm;
 use app\modules\user\models\User;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use app\modules\user\forms\ProfileUpdateForm;
 use app\modules\user\Module;
 =======
+=======
+use app\modules\user\Module;
+>>>>>>> 9bb1cc2... Added modules t method
 use app\modules\user\models\form\ProfileUpdateForm;
 >>>>>>> 4bd6e97... Extracted translations initialization
 use yii\filters\AccessControl;
@@ -58,7 +62,7 @@ class ProfileController extends Controller
         $model = new PasswordChangeForm($user);
 
         if ($model->load(Yii::$app->request->post()) && $model->changePassword()) {
-            Yii::$app->getSession()->setFlash('success', Yii::t('user', 'FLASH_PASSWORD_CHANGE_SUCCESS'));
+            Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_PASSWORD_CHANGE_SUCCESS'));
             return $this->redirect(['index']);
         } else {
             return $this->render('passwordChange', [

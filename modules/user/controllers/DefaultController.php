@@ -7,6 +7,7 @@ use app\modules\user\forms\LoginForm;
 use app\modules\user\forms\PasswordResetRequestForm;
 use app\modules\user\forms\PasswordResetForm;
 use app\modules\user\forms\SignupForm;
+use app\modules\user\Module;
 use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -87,7 +88,7 @@ class DefaultController extends Controller
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
-                Yii::$app->getSession()->setFlash('success', Yii::t('user', 'FLASH_EMAIL_CONFIRM_REQUEST'));
+                Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_EMAIL_CONFIRM_REQUEST'));
                 return $this->goHome();
             }
         }
@@ -106,9 +107,9 @@ class DefaultController extends Controller
         }
 
         if ($model->confirmEmail()) {
-            Yii::$app->getSession()->setFlash('success', Yii::t('user', 'FLASH_EMAIL_CONFIRM_SUCCESS'));
+            Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_EMAIL_CONFIRM_SUCCESS'));
         } else {
-            Yii::$app->getSession()->setFlash('error', Yii::t('user', 'FLASH_EMAIL_CONFIRM_ERROR'));
+            Yii::$app->getSession()->setFlash('error', Module::t('module', 'FLASH_EMAIL_CONFIRM_ERROR'));
         }
 
         return $this->goHome();
@@ -119,11 +120,11 @@ class DefaultController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->getSession()->setFlash('success', Yii::t('user', 'FLASH_PASSWORD_RESET_REQUEST'));
+                Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_PASSWORD_RESET_REQUEST'));
 
                 return $this->goHome();
             } else {
-                Yii::$app->getSession()->setFlash('error', Yii::t('user', 'FLASH_PASSWORD_RESET_ERROR'));
+                Yii::$app->getSession()->setFlash('error', Module::t('module', 'FLASH_PASSWORD_RESET_ERROR'));
             }
         }
 
@@ -141,7 +142,7 @@ class DefaultController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->getSession()->setFlash('success', Yii::t('user', 'FLASH_PASSWORD_RESET_SUCCESS'));
+            Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_PASSWORD_RESET_SUCCESS'));
 
             return $this->goHome();
         }

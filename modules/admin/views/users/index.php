@@ -1,6 +1,7 @@
 <?php
 
 use app\modules\admin\models\User;
+use app\modules\admin\Module;
 use app\widgets\grid\ActionColumn;
 use app\widgets\grid\LinkColumn;
 use app\widgets\grid\SetColumn;
@@ -12,8 +13,8 @@ use yii\grid\GridView;
 /* @var $searchModel \app\modules\admin\forms\search\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('admin', 'ADMIN_USERS');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('admin', 'ADMIN'), 'url' => ['default/index']];
+$this->title = Module::t('module', 'ADMIN_USERS');
+$this->params['breadcrumbs'][] = ['label' => Module::t('module', 'ADMIN'), 'url' => ['default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="users-index">
@@ -21,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('admin', 'ADMIN_USERS_ADD'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Module::t('module', 'ADMIN_USERS_ADD'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
