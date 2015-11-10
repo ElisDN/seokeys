@@ -16,4 +16,9 @@ class Module extends \yii\base\Module
             $this->controllerNamespace = 'app\modules\user\commands';
         }
     }
+
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('modules/user/' . $category, $message, $params, $language);
+    }
 }

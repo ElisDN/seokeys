@@ -3,6 +3,7 @@
 namespace app\modules\user\models\form;
 
 use app\modules\user\models\User;
+use app\modules\user\Module;
 use yii\base\Model;
 use Yii;
 
@@ -49,9 +50,9 @@ class PasswordChangeForm extends Model
     public function attributeLabels()
     {
         return [
-            'newPassword' => Yii::t('user', 'USER_NEW_PASSWORD'),
-            'newPasswordRepeat' => Yii::t('user', 'USER_REPEAT_PASSWORD'),
-            'currentPassword' => Yii::t('user', 'USER_CURRENT_PASSWORD'),
+            'newPassword' => Module::t('module', 'USER_NEW_PASSWORD'),
+            'newPasswordRepeat' => Module::t('module', 'USER_REPEAT_PASSWORD'),
+            'currentPassword' => Module::t('module', 'USER_CURRENT_PASSWORD'),
         ];
     }
 
@@ -63,7 +64,7 @@ class PasswordChangeForm extends Model
     {
         if (!$this->hasErrors()) {
             if (!$this->_user->validatePassword($this->$attribute)) {
-                $this->addError($attribute, Yii::t('user', 'ERROR_WRONG_CURRENT_PASSWORD'));
+                $this->addError($attribute, Module::t('module', 'ERROR_WRONG_CURRENT_PASSWORD'));
             }
         }
     }

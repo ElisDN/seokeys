@@ -3,6 +3,7 @@
 namespace app\modules\user\models\form;
 
 use app\modules\user\models\User;
+use app\modules\user\Module;
 use yii\base\Model;
 use Yii;
 
@@ -27,7 +28,7 @@ class PasswordResetRequestForm extends Model
             ['email', 'exist',
                 'targetClass' => User::className(),
                 'filter' => ['status' => User::STATUS_ACTIVE],
-                'message' => Yii::t('user', 'ERROR_USER_NOT_FOUND_BY_EMAIL')
+                'message' => Module::t('module', 'ERROR_USER_NOT_FOUND_BY_EMAIL')
             ],
             ['email', 'validateIsSent'],
         ];
@@ -39,7 +40,7 @@ class PasswordResetRequestForm extends Model
     public function attributeLabels()
     {
         return [
-            'email' => Yii::t('user', 'USER_EMAIL'),
+            'email' => Module::t('module', 'USER_EMAIL'),
         ];
     }
 
@@ -51,7 +52,7 @@ class PasswordResetRequestForm extends Model
     {
         if (!$this->hasErrors() && $user = $this->getUser()) {
             if (User::isPasswordResetTokenValid($user->$attribute)) {
-                $this->addError($attribute, Yii::t('user', 'ERROR_TOKEN_IS_SENT'));
+                $this->addError($attribute, Module::t('module', 'ERROR_TOKEN_IS_SENT'));
             }
         }
     }

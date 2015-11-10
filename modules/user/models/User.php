@@ -3,6 +3,7 @@
 namespace app\modules\user\models;
 
 use app\modules\user\models\query\UserQuery;
+use app\modules\user\Module;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -54,12 +55,12 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['username', 'required'],
             ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('user', 'ERROR_USERNAME_EXISTS')],
+            ['username', 'unique', 'targetClass' => self::className(), 'message' => Module::t('module', 'ERROR_USERNAME_EXISTS')],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('user', 'ERROR_EMAIL_EXISTS')],
+            ['email', 'unique', 'targetClass' => self::className(), 'message' => Module::t('module', 'ERROR_EMAIL_EXISTS')],
             ['email', 'string', 'max' => 255],
 
             ['status', 'integer'],
@@ -75,11 +76,11 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'created_at' => Yii::t('user', 'USER_CREATED'),
-            'updated_at' => Yii::t('user', 'USER_UPDATED'),
-            'username' => Yii::t('user', 'USER_USERNAME'),
-            'email' => Yii::t('user', 'USER_EMAIL'),
-            'status' => Yii::t('user', 'USER_STATUS'),
+            'created_at' => Module::t('module', 'USER_CREATED'),
+            'updated_at' => Module::t('module', 'USER_UPDATED'),
+            'username' => Module::t('module', 'USER_USERNAME'),
+            'email' => Module::t('module', 'USER_EMAIL'),
+            'status' => Module::t('module', 'USER_STATUS'),
         ];
     }
 
@@ -101,9 +102,9 @@ class User extends ActiveRecord implements IdentityInterface
     public static function getStatusesArray()
     {
         return [
-            self::STATUS_BLOCKED => Yii::t('user', 'USER_STATUS_BLOCKED'),
-            self::STATUS_ACTIVE => Yii::t('user', 'USER_STATUS_ACTIVE'),
-            self::STATUS_WAIT => Yii::t('user', 'USER_STATUS_WAIT'),
+            self::STATUS_BLOCKED => Module::t('module', 'USER_STATUS_BLOCKED'),
+            self::STATUS_ACTIVE => Module::t('module', 'USER_STATUS_ACTIVE'),
+            self::STATUS_WAIT => Module::t('module', 'USER_STATUS_WAIT'),
         ];
     }
 
