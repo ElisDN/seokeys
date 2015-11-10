@@ -9,10 +9,6 @@ class Module extends \yii\base\Module
 {
     public $controllerNamespace = 'app\modules\user\controllers';
 
-    public $passwordResetTokenExpire = 3600;
-
-    public $emailConfirmUserExpire = 259200; // 3 days
-
     public function init()
     {
         parent::init();

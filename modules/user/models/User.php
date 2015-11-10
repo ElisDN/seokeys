@@ -2,7 +2,6 @@
 
 namespace app\modules\user\models;
 
-use app\modules\user\helpers\UserHelper;
 use app\modules\user\models\query\UserQuery;
 use Yii;
 use yii\base\NotSupportedException;
@@ -217,12 +216,11 @@ class User extends ActiveRecord implements IdentityInterface
      * Finds user by password reset token
      *
      * @param string $token password reset token
-     * @param integer $timeout
      * @return static|null
      */
-    public static function findByPasswordResetToken($token, $timeout)
+    public static function findByPasswordResetToken($token)
     {
-        if (!UserHelper::isPasswordResetTokenValid($token, $timeout)) {
+        if (!static::isPasswordResetTokenValid($token)) {
             return null;
         }
         return static::findOne([
@@ -232,12 +230,20 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * @param integer $timeout
-     * @return bool
+     * Finds out if password reset token is valid
+     *
+     * @param string $token password reset token
+     * @return boolean
      */
-    public function isPasswordResetTokenValid($timeout)
+    public static function isPasswordResetTokenValid($token)
     {
-        return UserHelper::isPasswordResetTokenValid($this->password_reset_token, $timeout);
+        if (empty($token)) {
+            return false;
+        }
+        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
+        $parts = explode('_', $token);
+        $timestamp = (int) end($parts);
+        return $timestamp + $expire >= time();
     }
 
     /**
@@ -245,7 +251,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = UserHelper::generatePasswordResetToken();
+        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
     /**

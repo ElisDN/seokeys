@@ -3,7 +3,6 @@
 namespace app\modules\user\models\form;
 
 use app\modules\user\models\User;
-use yii\base\InvalidParamException;
 use yii\base\Model;
 use Yii;
 
@@ -14,23 +13,7 @@ class PasswordResetRequestForm extends Model
 {
     public $email;
 
-    private $_timeout;
-
     private $_user = false;
-
-    /**
-     * @param integer $timeout
-     * @param array $config
-     * @throws \yii\base\InvalidParamException
-     */
-    public function __construct($timeout, $config = [])
-    {
-        if (empty($timeout)) {
-            throw new InvalidParamException('Timeout cannot be blank.');
-        }
-        $this->_timeout = $timeout;
-        parent::__construct($config);
-    }
 
     /**
      * @inheritdoc
@@ -67,10 +50,10 @@ class PasswordResetRequestForm extends Model
     public function validateIsSent($attribute, $params)
     {
         if (!$this->hasErrors() && $user = $this->getUser()) {
-            if ($user->isPasswordResetTokenValid($this->_timeout)) {
+            if (User::isPasswordResetTokenValid($user->$attribute)) {
                 $this->addError($attribute, Yii::t('user', 'ERROR_TOKEN_IS_SENT'));
             }
-    }
+        }
     }
 
     /**
