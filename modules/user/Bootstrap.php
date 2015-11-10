@@ -4,6 +4,7 @@ namespace app\modules\user;
 
 use app\modules\user\forms\PasswordResetForm;
 use app\modules\user\forms\PasswordResetRequestForm;
+use app\modules\user\models\query\UserQuery;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
 use Yii;
@@ -35,6 +36,10 @@ class Bootstrap implements BootstrapInterface
 
         $container->set(PasswordResetForm::class, function ($container, $args) use ($app) {
             return new PasswordResetForm($args[0], $app->params['user.passwordResetTokenExpire']);
+        });
+
+        $container->set(UserQuery::class, function ($container, $args) use ($app) {
+            return new UserQuery($args[0], $app->params['user.emailConfirmUserExpire']);
         });
     }
 }

@@ -116,8 +116,7 @@ class DefaultController extends Controller
 
     public function actionPasswordResetRequest()
     {
-        /** @var PasswordResetRequestForm $model */
-        $model = Yii::createObject(PasswordResetRequestForm::class);
+        $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->getSession()->setFlash('success', Yii::t('user', 'FLASH_PASSWORD_RESET_REQUEST'));
@@ -136,8 +135,7 @@ class DefaultController extends Controller
     public function actionPasswordReset($token)
     {
         try {
-            /** @var PasswordResetForm $model */
-            $model = Yii::createObject(PasswordResetForm::class, [$token]);
+            $model = new PasswordResetForm($token);
         } catch (InvalidParamException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }

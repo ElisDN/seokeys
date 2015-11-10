@@ -8,10 +8,18 @@ use Yii;
 
 class UserQuery extends ActiveQuery
 {
-    public function overdue($timeout)
+    private $timeout;
+
+    public function __construct($className, $timeout)
+    {
+        parent::__construct($className);
+        $this->timeout = $timeout;
+    }
+
+    public function overdue()
     {
         return $this
             ->andWhere(['status' => User::STATUS_WAIT])
-            ->andWhere(['<', 'created_at', time() - $timeout]);
+            ->andWhere(['<', 'created_at', time() - $this->timeout]);
     }
 }

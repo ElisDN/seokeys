@@ -5,6 +5,7 @@ namespace app\modules\user\commands;
 use app\modules\user\models\User;
 use yii\console\Controller;
 use yii\helpers\Console;
+use Yii;
 
 /**
  * Console crontab actions
@@ -12,16 +13,11 @@ use yii\helpers\Console;
 class CronController extends Controller
 {
     /**
-     * @var \app\modules\user\Module
-     */
-    public $module;
-
-    /**
      * Removes non-activated expired users
      */
     public function actionRemoveOverdue()
     {
-        foreach (User::find()->overdue($this->module->emailConfirmUserExpire)->each() as $user) {
+        foreach (User::find()->overdue()->each() as $user) {
             /** @var User $user */
             $this->stdout($user->username);
             $user->delete();
