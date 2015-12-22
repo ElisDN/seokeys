@@ -8,10 +8,10 @@ use Yii;
 
 class UserQuery extends ActiveQuery
 {
-    public function overdue($timeout)
+    public function overdue()
     {
         return $this
             ->andWhere(['status' => User::STATUS_WAIT])
-            ->andWhere(['<', 'created_at', time() - $timeout]);
+            ->andWhere(['<', 'created_at', time() - Yii::$app->params['user.emailConfirmTokenExpire']]);
     }
 }

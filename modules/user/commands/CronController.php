@@ -17,7 +17,7 @@ class CronController extends Controller
      */
     public function actionRemoveOverdue()
     {
-        foreach (User::find()->overdue(Yii::$app->params['user.emailConfirmTokenExpire'])->each() as $user) {
+        foreach (User::find()->overdue()->each() as $user) {
             /** @var User $user */
             $this->stdout($user->username);
             $user->delete();
