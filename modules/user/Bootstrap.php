@@ -42,7 +42,7 @@ class Bootstrap implements BootstrapInterface
         });
 
         $container->set(UserQuery::class, function ($container, $args) use ($app) {
-            return new UserQuery($args[0], $app->params['user.emailConfirmUserExpire']);
+            return new UserQuery($args[0], $app->params['user.emailConfirmTokenExpire']);
         });
     }
 }
