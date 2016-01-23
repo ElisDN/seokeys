@@ -41,6 +41,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]),
                 'attribute' => 'created_at',
                 'format' => 'datetime',
+                'filterOptions' => [
+                    'style' => 'max-width: 180px',
+                ],
             ],
             [
                 'class' => LinkColumn::className(),
