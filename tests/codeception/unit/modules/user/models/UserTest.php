@@ -3,6 +3,7 @@
 namespace tests\codeception\unit\modules\user\models;
 
 use app\modules\user\models\User;
+use tests\codeception\fixtures\UserFixture;
 use yii\codeception\DbTestCase;
 use Codeception\Specify;
 
@@ -46,5 +47,12 @@ class UserTest extends DbTestCase
         ]);
 
         expect('model is valid', $model->validate())->true();
+    }
+
+    public function fixtures()
+    {
+        return [
+            'users' => UserFixture::className(),
+        ];
     }
 }
