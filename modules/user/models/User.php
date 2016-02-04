@@ -44,7 +44,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function find()
     {
-        return new UserQuery(get_called_class());
+        return Yii::createObject(UserQuery::className(), [get_called_class()]);
     }
 
     /**
