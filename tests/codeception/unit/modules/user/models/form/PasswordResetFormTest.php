@@ -19,7 +19,7 @@ class PasswordResetFormTest extends DbTestCase
      */
     public function testResetWrongToken()
     {
-        new PasswordResetForm('notexistingtoken_1391882543');
+        new PasswordResetForm('notexistingtoken_1391882543', 3600);
     }
 
     /**
@@ -27,12 +27,12 @@ class PasswordResetFormTest extends DbTestCase
      */
     public function testResetEmptyToken()
     {
-        new PasswordResetForm('');
+        new PasswordResetForm('', 3600);
     }
 
     public function testResetCorrectToken()
     {
-        $form = new PasswordResetForm($this->users[0]['password_reset_token']);
+        $form = new PasswordResetForm($this->users[0]['password_reset_token'], 3600);
         expect('password should be resetted', $form->resetPassword())->true();
     }
 

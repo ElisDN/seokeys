@@ -36,12 +36,12 @@ class PasswordResetRequestFormTest extends DbTestCase
 
     public function testSendEmailWrongUser()
     {
-        $model = new PasswordResetRequestForm();
+        $model = new PasswordResetRequestForm(3600);
         $model->email = 'not-existing-email@example.com';
 
         expect('not existing user email not sent', $model->sendEmail())->false();
 
-        $model = new PasswordResetRequestForm();
+        $model = new PasswordResetRequestForm(3600);
         $model->email = $this->users[1]['email'];
 
         expect('active user email not sent', $model->sendEmail())->false();
@@ -49,7 +49,7 @@ class PasswordResetRequestFormTest extends DbTestCase
 
     public function testSendEmailCorrectUser()
     {
-        $model = new PasswordResetRequestForm();
+        $model = new PasswordResetRequestForm(3600);
         $model->email = $this->users[0]['email'];
         /** @var User $user */
         $user = User::findOne(['password_reset_token' => $this->users[0]['password_reset_token']]);
