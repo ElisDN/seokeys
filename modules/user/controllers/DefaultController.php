@@ -17,6 +17,11 @@ use Yii;
 
 class DefaultController extends Controller
 {
+    /**
+     * @var \app\modules\user\Module
+     */
+    public $module;
+
     public function behaviors()
     {
         return [
@@ -117,7 +122,7 @@ class DefaultController extends Controller
 
     public function actionPasswordResetRequest()
     {
-        $model = new PasswordResetRequestForm();
+        $model = new PasswordResetRequestForm($this->module->passwordResetTokenExpire);
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->getSession()->setFlash('success', Module::t('module', 'FLASH_PASSWORD_RESET_REQUEST'));
@@ -136,7 +141,7 @@ class DefaultController extends Controller
     public function actionPasswordReset($token)
     {
         try {
-            $model = new PasswordResetForm($token);
+            $model = new PasswordResetForm($token, $this->module->passwordResetTokenExpire);
         } catch (InvalidParamException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }
