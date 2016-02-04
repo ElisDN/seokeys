@@ -49,6 +49,23 @@ class UserTest extends DbTestCase
         expect('model is valid', $model->validate())->true();
     }
 
+    public function testSave()
+    {
+        $model = new User([
+            'username' => 'test_user',
+            'email' => 'other@example.com',
+            'status' => 1,
+        ]);
+        $model->setPassword('new-password');
+
+        expect('model is saved', $model->save())->true();
+
+        expect('password is correct', $model->validatePassword('new-password'))->true();
+        expect('auth key is correct', $model->auth_key)->notEmpty();
+        expect('created_at is correct', $model->created_at)->notEmpty();
+        expect('updated_at is correct', $model->updated_at)->notEmpty();
+    }
+
     public function fixtures()
     {
         return [
