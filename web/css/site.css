@@ -98,6 +98,10 @@ h1 {
     display: block;
 }
 
+.summary {
+    margin-bottom: 10px;
+}
+
 .grid-view td.action-column {
     white-space: nowrap;
     text-align: center;
