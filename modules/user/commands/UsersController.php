@@ -18,16 +18,16 @@ class UsersController extends Controller
      */
     public function actionCreate()
     {
-        $model = new User();
-        $this->readValue($model, 'username');
-        $this->readValue($model, 'email');
-        $model->setPassword($this->prompt('Password:', [
+        $user = new User();
+        $this->readValue($user, 'username');
+        $this->readValue($user, 'email');
+        $user->setPassword($this->prompt('Password:', [
             'required' => true,
             'pattern' => '#^.{6,255}$#i',
             'error' => 'More than 6 symbols',
         ]));
-        $model->generateAuthKey();
-        $this->log($model->save());
+        $user->generateAuthKey();
+        $this->log($user->save());
     }
 
     /**
@@ -36,8 +36,8 @@ class UsersController extends Controller
     public function actionDelete()
     {
         $username = $this->prompt('Username:', ['required' => true]);
-        $model = $this->findModel($username);
-        $this->log($model->delete());
+        $user = $this->findModel($username);
+        $this->log($user->delete());
     }
 
     /**
@@ -46,10 +46,10 @@ class UsersController extends Controller
     public function actionActivate()
     {
         $username = $this->prompt('Username:', ['required' => true]);
-        $model = $this->findModel($username);
-        $model->status = User::STATUS_ACTIVE;
-        $model->removeEmailConfirmToken();
-        $this->log($model->save());
+        $user = $this->findModel($username);
+        $user->status = User::STATUS_ACTIVE;
+        $user->removeEmailConfirmToken();
+        $this->log($user->save());
     }
 
     /**
@@ -58,13 +58,13 @@ class UsersController extends Controller
     public function actionChangePassword()
     {
         $username = $this->prompt('Username:', ['required' => true]);
-        $model = $this->findModel($username);
-        $model->setPassword($this->prompt('New password:', [
+        $user = $this->findModel($username);
+        $user->setPassword($this->prompt('New password:', [
             'required' => true,
             'pattern' => '#^.{6,255}$#i',
             'error' => 'More than 6 symbols',
         ]));
-        $this->log($model->save());
+        $this->log($user->save());
     }
 
     /**
@@ -74,25 +74,25 @@ class UsersController extends Controller
      */
     private function findModel($username)
     {
-        if (!$model = User::findOne(['username' => $username])) {
+        if (!$user = User::findOne(['username' => $username])) {
             throw new Exception('User not found');
         }
-        return $model;
+        return $user;
     }
 
     /**
-     * @param Model $model
+     * @param Model $user
      * @param string $attribute
      */
-    private function readValue($model, $attribute)
+    private function readValue($user, $attribute)
     {
-        $model->$attribute = $this->prompt(mb_convert_case($attribute, MB_CASE_TITLE, 'utf-8') . ':', [
-            'validator' => function ($input, &$error) use ($model, $attribute) {
-                $model->$attribute = $input;
-                if ($model->validate([$attribute])) {
+        $user->$attribute = $this->prompt(mb_convert_case($attribute, MB_CASE_TITLE, 'utf-8') . ':', [
+            'validator' => function ($input, &$error) use ($user, $attribute) {
+                $user->$attribute = $input;
+                if ($user->validate([$attribute])) {
                     return true;
                 } else {
-                    $error = implode(',', $model->getErrors($attribute));
+                    $error = implode(',', $user->getErrors($attribute));
                     return false;
                 }
             },
