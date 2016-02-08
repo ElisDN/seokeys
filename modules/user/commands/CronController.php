@@ -13,16 +13,11 @@ use Yii;
 class CronController extends Controller
 {
     /**
-     * @var \app\modules\user\Module
-     */
-    public $module;
-
-    /**
      * Removes non-activated expired users
      */
     public function actionRemoveOverdue()
     {
-        foreach (User::find()->overdue($this->module->emailConfirmTokenExpire)->each() as $user) {
+        foreach (User::find()->overdue()->each() as $user) {
             /** @var User $user */
             $this->stdout($user->username);
             if ($user->delete()) {
