@@ -51,7 +51,7 @@ class PasswordChangeCest extends AcceptanceCest
         }
         $I->expectTo('see validations errors');
         $I->see('New password should contain at least 6 characters.');
-        $I->see('Repeat new password must be repeated exactly.');
+        $I->see('Repeat new password must be equal');
 
         $I->amGoingTo('try to request with wrong current password');
         $requestPage->send([
