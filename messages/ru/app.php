@@ -2,7 +2,7 @@
 
 return [
     'NAV_HOME' => 'Главная',
-    'NAW_CONTACT' => 'Связь',
+    'NAV_CONTACT' => 'Связь',
     'NAV_SIGNUP' => 'Регистрация',
     'NAV_LOGIN' => 'Вход',
     'NAV_PROFILE' => 'Профиль',

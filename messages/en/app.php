@@ -2,7 +2,7 @@
 
 return [
     'NAV_HOME' => 'Home',
-    'NAW_CONTACT' => 'Contact',
+    'NAV_CONTACT' => 'Contact',
     'NAV_SIGNUP' => 'Signup',
     'NAV_LOGIN' => 'Login',
     'NAV_PROFILE' => 'Profile',

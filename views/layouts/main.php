@@ -25,7 +25,6 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 <div class="wrap">
     <?php
     NavBar::begin([
@@ -40,7 +39,7 @@ AppAsset::register($this);
         'activateParents' => true,
         'items' => array_filter([
             ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/main/default/index']],
-            ['label' => Yii::t('app', 'NAW_CONTACT'), 'url' => ['/main/contact/index']],
+            ['label' => Yii::t('app', 'NAV_CONTACT'), 'url' => ['/main/contact/index']],
             Yii::$app->user->isGuest ?
                 ['label' => Yii::t('app', 'NAV_SIGNUP'), 'url' => ['/user/default/signup']] :
                 false,
@@ -50,9 +49,9 @@ AppAsset::register($this);
             !Yii::$app->user->isGuest ?
                 ['label' => Yii::t('app', 'NAV_ADMIN'), 'items' => [
                     ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']],
-                    ['label' => Yii::t('app', 'ADMIN_USERS'), 'url' => ['/admin/users/index']],
+                    ['label' => Yii::t('app', 'NAV_ADMIN_USERS'), 'url' => ['/admin/users/index']],
                 ]] :
-                false,
+            false,
             !Yii::$app->user->isGuest ?
                 ['label' => Yii::t('app', 'NAV_PROFILE'), 'items' => [
                     ['label' => Yii::t('app', 'NAV_PROFILE'), 'url' => ['/user/profile/index']],
@@ -66,7 +65,7 @@ AppAsset::register($this);
                     . '</li>'
                 ]] :
                 false,
-        ],
+        ]),
     ]);
     NavBar::end();
     ?>
