@@ -2,57 +2,88 @@
 
 namespace app\modules\user\components;
 
-use app\modules\user\models\User;
+use yii\base\InvalidParamException;
+use yii\base\InvalidValueException;
 use yii\rbac\Assignment;
 use yii\rbac\PhpManager;
 use Yii;
 
 class AuthManager extends PhpManager
 {
+    /**
+     * @var string User model class name
+     * must be instance of AuthRoleModelInterface
+     */
+    public $modelClass = 'app\models\User';
+
+    /**
+     * @inheritdoc
+     */
     public function getAssignments($userId)
     {
+        $assignments = [];
         if ($userId && $user = $this->getUser($userId)) {
-            $assignment = new Assignment();
-            $assignment->userId = $userId;
-            $assignment->roleName = $user->role;
-            return [$assignment->roleName => $assignment];
+            foreach ($user->getAuthRoleNames() as $roleName) {
+                $assignment = new Assignment();
+                $assignment->userId = $userId;
+                $assignment->roleName = $roleName;
+                $assignments[$assignment->roleName] = $assignment;
+            }
         }
-        return [];
+        return $assignments;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getAssignment($roleName, $userId)
     {
         if ($userId && $user = $this->getUser($userId)) {
-            if ($user->role == $roleName) {
+            if (in_array($roleName, $user->getAuthRoleNames())) {
                 $assignment = new Assignment();
                 $assignment->userId = $userId;
-                $assignment->roleName = $user->role;
+                $assignment->roleName = $roleName;
                 return $assignment;
             }
         }
         return null;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getUserIdsByRole($roleName)
     {
-        return User::find()->andWhere(['role' => $roleName])->select('id')->column();
+        /** @var AuthRoleModelInterface $class */
+        $class = $this->modelClass;
+        return $class::findAuthIdsByRoleName($roleName);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function updateItem($name, $item)
     {
         if (parent::updateItem($name, $item)) {
             if ($item->name !== $name) {
-                User::updateAll(['role' => $name], ['role' => $item->name]);
+                /** @var AuthRoleModelInterface $class */
+                $class = $this->modelClass;
+                $class::updateAuthGlobalRoleName($name, $item->name);
             }
             return true;
         }
         return false;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function removeItem($item)
     {
         if (parent::removeItem($item)) {
-            User::updateAll(['role' => null], ['role' => $item->name]);
+            /** @var AuthRoleModelInterface $class */
+            $class = $this->modelClass;
+            $class::removeAuthGlobalRoleName($item->name);
             return true;
         }
         return false;
@@ -61,39 +92,61 @@ class AuthManager extends PhpManager
     public function removeAll()
     {
         parent::removeAll();
-        User::updateAll(['role' => null]);
+        /** @var AuthRoleModelInterface $class */
+        $class = $this->modelClass;
+        $class::removeAuthGlobalRoleNames();
     }
 
     public function removeAllAssignments()
     {
         parent::removeAllAssignments();
-        User::updateAll(['role' => null]);
+        /** @var AuthRoleModelInterface $class */
+        $class = $this->modelClass;
+        $class::removeAuthGlobalAssignments();
     }
 
+    /**
+     * @inheritdoc
+     */
     public function assign($role, $userId)
     {
         if ($userId && $user = $this->getUser($userId)) {
-            $user->updateAttributes(['role' => $user->role = $role->name]);
-            return true;
+            if (in_array($role->name, $user->getAuthRoleNames())) {
+                throw new InvalidParamException("Authorization item '{$role->name}' has already been assigned to user '$userId'.");
+            } else {
+                $assignment = new Assignment([
+                    'userId' => $userId,
+                    'roleName' => $role->name,
+                    'createdAt' => time(),
+                ]);
+                $user->addAuthRoleName($role->name);
+                return $assignment;
+            }
         }
         return false;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function revoke($role, $userId)
     {
         if ($userId && $user = $this->getUser($userId)) {
-            if ($user->role == $role->name) {
-                $user->updateAttributes(['role' => $user->role = null]);
+            if (in_array($role->name, $user->getAuthRoleNames())) {
+                $user->removeAuthRoleName($role->name);
                 return true;
             }
         }
         return false;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function revokeAll($userId)
     {
         if ($userId && $user = $this->getUser($userId)) {
-            $user->updateAttributes(['role' => $user->role = null]);
+            $user->clearAuthRoleNames();
             return true;
         }
         return false;
@@ -101,16 +154,22 @@ class AuthManager extends PhpManager
 
     /**
      * @param integer $userId
-     * @return null|\yii\web\IdentityInterface|User
+     * @return null|AuthRoleModelInterface
      */
     private function getUser($userId)
     {
         /** @var \yii\web\User $webUser */
         $webUser = Yii::$app->get('user', false);
-        if ($webUser && !$webUser->getIsGuest() && $webUser->getId() == $userId) {
-            return $webUser->identity;
+        if ($webUser && !$webUser->getIsGuest() && $webUser->getId() == $userId && $webUser->getIdentity() instanceof AuthRoleModelInterface) {
+            return $webUser->getIdentity();
         } else {
-            return User::findOne($userId);
+            /** @var AuthRoleModelInterface $class */
+            $class = $this->modelClass;
+            $identity = $class::findAuthRoleIdentity($userId);
+            if ($identity && !$identity instanceof AuthRoleModelInterface) {
+                throw new InvalidValueException('The identity object must implement AuthRoleInterface.');
+            }
+            return $identity;
         }
     }
 } 

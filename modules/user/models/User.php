@@ -2,6 +2,7 @@
 
 namespace app\modules\user\models;
 
+use app\modules\user\components\AuthRoleModelInterface;
 use app\modules\user\models\query\UserQuery;
 use app\modules\user\Module;
 use Yii;
@@ -26,7 +27,7 @@ use yii\web\IdentityInterface;
  * @property string $role
  * @property integer $status
  */
-class User extends ActiveRecord implements IdentityInterface
+class User extends ActiveRecord implements IdentityInterface, AuthRoleModelInterface
 {
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
@@ -151,6 +152,56 @@ class User extends ActiveRecord implements IdentityInterface
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
+    }
+
+    public static function findAuthRoleIdentity($id)
+    {
+        return static::findOne($id);
+    }
+
+    public static function findAuthIdsByRoleName($roleName)
+    {
+        return static::find()->where(['role' => $roleName])->select(['id'])->column();
+    }
+
+    public static function updateAuthGlobalRoleName($oldRoleName, $newRoleName)
+    {
+        self::updateAll(['role' => $newRoleName], ['role' => $oldRoleName]);
+    }
+
+    public static function removeAuthGlobalRoleName($roleName)
+    {
+        self::updateAll(['role' => null], ['role' => $roleName]);
+    }
+
+    public static function removeAuthGlobalRoleNames()
+    {
+        self::updateAll(['role' => null]);
+    }
+
+    public static function removeAuthGlobalAssignments()
+    {
+        self::updateAll(['role' => null]);
+    }
+
+    public function getAuthRoleNames()
+    {
+        return [$this->role];
+    }
+
+    public function addAuthRoleName($roleName)
+    {
+        $this->updateAttributes(['role' => $this->role = $roleName]);
+    }
+
+    public function removeAuthRoleName($roleName)
+    {
+        $this->updateAttributes(['role' => $this->role = null]);
+    }
+
+    public function clearAuthRoleNames()
+    {
+        $this->updateAttributes(['role' => $this->role = null]);
     }
 
     /**

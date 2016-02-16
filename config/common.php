@@ -64,6 +64,7 @@ return [
         ],
         'authManager' => [
             'class' => 'app\modules\user\components\AuthManager',
+            'modelClass' => 'app\modules\user\models\User',
         ],
         'i18n' => [
             'translations' => [
