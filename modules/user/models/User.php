@@ -163,26 +163,6 @@ class User extends ActiveRecord implements IdentityInterface, AuthRoleModelInter
         return static::find()->where(['role' => $roleName])->select(['id'])->column();
     }
 
-    public static function updateAuthGlobalRoleName($oldRoleName, $newRoleName)
-    {
-        self::updateAll(['role' => $newRoleName], ['role' => $oldRoleName]);
-    }
-
-    public static function removeAuthGlobalRoleName($roleName)
-    {
-        self::updateAll(['role' => null], ['role' => $roleName]);
-    }
-
-    public static function removeAuthGlobalRoleNames()
-    {
-        self::updateAll(['role' => null]);
-    }
-
-    public static function removeAuthGlobalAssignments()
-    {
-        self::updateAll(['role' => null]);
-    }
-
     public function getAuthRoleNames()
     {
         return [$this->role];

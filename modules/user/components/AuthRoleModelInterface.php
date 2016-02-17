@@ -17,27 +17,6 @@ interface AuthRoleModelInterface
     public static function findAuthIdsByRoleName($roleName);
 
     /**
-     * @param string $oldRoleName
-     * @param string $newRoleName
-     */
-    public static function updateAuthGlobalRoleName($oldRoleName, $newRoleName);
-
-    /**
-     * @param string $roleName
-     */
-    public static function removeAuthGlobalRoleName($roleName);
-
-    /**
-     * On all roles removing
-     */
-    public static function removeAuthGlobalRoleNames();
-
-    /**
-     * On all assignments removing
-     */
-    public static function removeAuthGlobalAssignments();
-
-    /**
      * @return array
      */
     public function getAuthRoleNames();
