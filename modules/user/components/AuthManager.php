@@ -2,6 +2,10 @@
 
 namespace app\modules\user\components;
 
+use app\modules\user\components\events\RemoveAllAssignmentsEvent;
+use app\modules\user\components\events\RemoveAllEvent;
+use app\modules\user\components\events\RemoveRoleEvent;
+use app\modules\user\components\events\RenameRoleEvent;
 use yii\base\InvalidParamException;
 use yii\base\InvalidValueException;
 use yii\rbac\Assignment;
@@ -10,6 +14,11 @@ use Yii;
 
 class AuthManager extends PhpManager
 {
+    const EVENT_RENAME_ROLE = 'renameRole';
+    const EVENT_REMOVE_ROLE = 'removeRole';
+    const EVENT_REMOVE_ALL = 'removeAll';
+    const EVENT_REMOVE_ALL_ASSIGNMENTS = 'removeAllAssignments';
+
     /**
      * @var string User model class name
      * must be instance of AuthRoleModelInterface
@@ -66,9 +75,10 @@ class AuthManager extends PhpManager
     {
         if (parent::updateItem($name, $item)) {
             if ($item->name !== $name) {
-                /** @var AuthRoleModelInterface $class */
-                $class = $this->modelClass;
-                $class::updateAuthGlobalRoleName($name, $item->name);
+                $this->trigger(self::EVENT_RENAME_ROLE, new RenameRoleEvent([
+                    'oldRoleName' => $name,
+                    'newRoleName' => $item->name,
+                ]));
             }
             return true;
         }
@@ -81,9 +91,9 @@ class AuthManager extends PhpManager
     public function removeItem($item)
     {
         if (parent::removeItem($item)) {
-            /** @var AuthRoleModelInterface $class */
-            $class = $this->modelClass;
-            $class::removeAuthGlobalRoleName($item->name);
+            $this->trigger(self::EVENT_REMOVE_ROLE, new RemoveRoleEvent([
+                'roleName' => $item->name,
+            ]));
             return true;
         }
         return false;
@@ -92,17 +102,13 @@ class AuthManager extends PhpManager
     public function removeAll()
     {
         parent::removeAll();
-        /** @var AuthRoleModelInterface $class */
-        $class = $this->modelClass;
-        $class::removeAuthGlobalRoleNames();
+        $this->trigger(self::EVENT_REMOVE_ALL, new RemoveAllEvent());
     }
 
     public function removeAllAssignments()
     {
         parent::removeAllAssignments();
-        /** @var AuthRoleModelInterface $class */
-        $class = $this->modelClass;
-        $class::removeAuthGlobalAssignments();
+        $this->trigger(self::EVENT_REMOVE_ALL_ASSIGNMENTS, new RemoveAllAssignmentsEvent());
     }
 
     /**
@@ -154,6 +160,7 @@ class AuthManager extends PhpManager
 
     /**
      * @param integer $userId
+     * @throws \yii\base\InvalidValueException
      * @return null|AuthRoleModelInterface
      */
     private function getUser($userId)
