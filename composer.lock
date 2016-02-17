@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9537e7492d6a354e71d29abf81e764b",
-    "content-hash": "58b25914490e3e94540293fba462f43f",
+    "hash": "68340cb564f726587cb3983cfbc8091d",
+    "content-hash": "9a023dc2f85b7d8740f2a350321899ed",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -319,6 +319,57 @@
                 "markdown-extra"
             ],
             "time": "2015-03-06 05:28:07"
+        },
+        {
+            "name": "elisdn/yii2-hybrid-authmanager",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ElisDN/yii2-hybrid-authmanager.git",
+                "reference": "f353a0debecfacec2be5d17b10c45d9ddb84c52e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ElisDN/yii2-hybrid-authmanager/zipball/f353a0debecfacec2be5d17b10c45d9ddb84c52e",
+                "reference": "f353a0debecfacec2be5d17b10c45d9ddb84c52e",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "elisdn\\hybrid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitriy Yeliseyev",
+                    "email": "mail@elisdn.ru",
+                    "homepage": "http://www.elisdn.ru"
+                }
+            ],
+            "description": "Hybrid RBAC AuthManager for Yii2 Framework.",
+            "keywords": [
+                "authmanager",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2016-03-18 14:36:27"
         },
         {
             "name": "ezyang/htmlpurifier",

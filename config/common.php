@@ -53,7 +53,7 @@ return [
             ],
         ],
         'authManager' => [
-            'class' => 'app\modules\user\components\AuthManager',
+            'class' => 'elisdn\hybrid\AuthManager',
             'modelClass' => 'app\modules\user\models\User',
         ],
         'i18n' => [

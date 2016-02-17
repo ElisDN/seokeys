@@ -18,7 +18,8 @@
 		"bower-asset/respond": "*",
 		"bower-asset/jquery": "1.*",
 		"kartik-v/yii2-widget-datepicker": "*",
-		"kartik-v/yii2-field-range": "*"
+		"kartik-v/yii2-field-range": "*",
+		"elisdn/yii2-hybrid-authmanager": "^1.0"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",

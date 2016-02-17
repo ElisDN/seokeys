@@ -2,7 +2,7 @@
 
 namespace app\modules\user\models;
 
-use app\modules\user\components\AuthRoleModelInterface;
+use elisdn\hybrid\AuthRoleModelInterface;
 use app\modules\user\models\query\UserQuery;
 use app\modules\user\Module;
 use Yii;
