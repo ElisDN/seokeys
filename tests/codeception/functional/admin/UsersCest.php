@@ -18,7 +18,7 @@ class UsersCest extends FunctionalCest
     public function testList(FunctionalTester $I)
     {
         $I->wantTo('ensure that user index page works');
-        $I->amOnPage(['admin/users/index']);
+        $I->amOnPage(['admin/users/default/index']);
         $I->seeInTitle('Users');
     }
 
@@ -29,11 +29,11 @@ class UsersCest extends FunctionalCest
     public function testView(FunctionalTester $I)
     {
         $I->wantTo('ensure that user view page works');
-        $I->amOnPage(['admin/users/view', 'id' => 1]);
+        $I->amOnPage(['admin/users/default/view', 'id' => 1]);
         $I->seeInTitle('admin');
         $I->seeLink('Update');
 
-        $I->amOnPage(['admin/users/view', 'id' => 100]);
+        $I->amOnPage(['admin/users/default/view', 'id' => 100]);
         $I->canSee('404');
     }
 
@@ -163,7 +163,7 @@ class UsersCest extends FunctionalCest
         $I->amGoingTo('delete item');
         $id = $I->grabFromCurrentUrl('#(\d+)#');
 
-        $I->sendAjaxPostRequest(Url::to(['/admin/users/delete', 'id' => $id]));
+        $I->sendAjaxPostRequest(Url::to(['/admin/users/default/delete', 'id' => $id]));
 
         $I->expectTo('see that user is deleted');
         $I->dontSeeRecord(User::className(), [

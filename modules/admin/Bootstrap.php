@@ -3,7 +3,6 @@
 namespace app\modules\admin;
 
 use yii\base\BootstrapInterface;
-use Yii;
 
 class Bootstrap implements BootstrapInterface
 {
