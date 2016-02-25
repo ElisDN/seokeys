@@ -6,7 +6,7 @@ $config = [
     'modules' => [
         'user' => [
             'class' => 'app\modules\user\Module',
-            'controllerNamespace' => 'app\modules\user\commands',
+            'controllerNamespace' => 'app\modules\user\controllers\console',
         ],
     ],
 ];

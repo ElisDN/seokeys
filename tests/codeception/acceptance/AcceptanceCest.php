@@ -31,8 +31,9 @@ class AcceptanceCest
 
     protected function logout(AcceptanceTester $I)
     {
-        $I->see('Profile', '.nav');
-        $I->click('Profile', '.nav');
+        if ($I->canSee('Profile', '.nav')) {
+            $I->click('Profile', '.nav');
+        }
         $I->see('Logout', '.nav');
         $I->click('Logout');
         if (method_exists($I, 'wait')) {

@@ -8,5 +8,5 @@ namespace tests\codeception\_pages\admin\users;
  */
 class UserUpdatePage extends UserCreatePage
 {
-    public $route = 'admin/users/update';
+    public $route = 'admin/users/default/update';
 }

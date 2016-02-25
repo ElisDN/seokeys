@@ -31,9 +31,26 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => 'yii\web\GroupUrlRule',
+                    'prefix' => 'admin',
+                    'routePrefix' => 'admin',
+                    'rules' => [
+                        '' => 'default/index',
+                        '<_m:[\w\-]+>' => '<_m>/default/index',
+                        '<_m:[\w\-]+>/<id:\d+>' => '<_m>/default/view',
+                        '<_m:[\w\-]+>/<id:\d+>/<_a:[\w-]+>' => '<_m>/default/<_a>',
+                        '<_m:[\w\-]+>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
+                        '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
+                        '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>/<_a:[\w\-]+>' => '<_m>/<_c>/<_a>',
+                        '<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w-]+>' => '<_m>/<_c>/<_a>',
+                    ],
+                ],
+
                 '' => 'main/default/index',
                 'contact' => 'main/contact/index',
                 '<_a:error>' => 'main/default/<_a>',
+
                 '<_a:(login|logout|signup|email-confirm|password-reset-request|password-reset)>' => 'user/default/<_a>',
 
                 '<_m:[\w\-]+>' => '<_m>/default/index',
