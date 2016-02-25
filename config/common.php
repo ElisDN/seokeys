@@ -9,7 +9,6 @@ $params = ArrayHelper::merge(
 
 return [
     'name' => 'SeoKeys',
-    'language'=>'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',

@@ -2,6 +2,7 @@
 
 $config = [
     'id' => 'app',
+    'language'=>'ru-RU',
     'components' => [
         'user' => [
             'identityClass' => 'app\modules\user\models\User',
