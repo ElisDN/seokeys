@@ -6,6 +6,7 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
+            'layout' => '@app/views/layouts/admin',
             'modules' => [
                 'users' => [
                     'class' => 'app\modules\user\Module',

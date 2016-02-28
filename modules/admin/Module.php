@@ -9,8 +9,6 @@ class Module extends \yii\base\Module
 {
     public $controllerNamespace = 'app\modules\admin\controllers';
 
-    public $layout = 'main';
-
     public function behaviors()
     {
         return [
