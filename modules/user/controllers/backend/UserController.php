@@ -2,17 +2,10 @@
 
 namespace app\modules\user\controllers\backend;
 
-use app\modules\user\models\frontend\form\EmailConfirmForm;
 use app\modules\user\models\form\LoginForm;
-use app\modules\user\models\frontend\form\PasswordResetForm;
-use app\modules\user\models\frontend\form\PasswordResetRequestForm;
-use app\modules\user\models\frontend\form\SignupForm;
-use app\modules\user\Module;
 use Yii;
-use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
 class UserController extends Controller
