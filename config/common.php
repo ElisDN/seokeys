@@ -54,7 +54,7 @@ return [
         ],
         'authManager' => [
             'class' => 'elisdn\hybrid\AuthManager',
-            'modelClass' => 'app\modules\user\models\User',
+            'modelClass' => 'app\components\UserIdentity',
         ],
         'i18n' => [
             'translations' => [
