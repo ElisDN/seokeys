@@ -25,7 +25,7 @@ $config = [
     ],
     'components' => [
         'user' => [
-            'identityClass' => 'app\modules\user\models\User',
+            'identityClass' => 'app\components\UserIdentity',
             'enableAutoLogin' => true,
             'loginUrl' => ['user/default/login'],
         ],

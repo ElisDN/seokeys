@@ -2,7 +2,6 @@
 
 namespace app\modules\user\models;
 
-use elisdn\hybrid\AuthRoleModelInterface;
 use app\modules\user\models\query\UserQuery;
 use app\modules\user\Module;
 use Yii;
@@ -27,7 +26,7 @@ use yii\web\IdentityInterface;
  * @property string $role
  * @property integer $status
  */
-class User extends ActiveRecord implements IdentityInterface, AuthRoleModelInterface
+class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
@@ -152,36 +151,6 @@ class User extends ActiveRecord implements IdentityInterface, AuthRoleModelInter
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
-    }
-
-    public static function findAuthRoleIdentity($id)
-    {
-        return static::findOne($id);
-    }
-
-    public static function findAuthIdsByRoleName($roleName)
-    {
-        return static::find()->where(['role' => $roleName])->select(['id'])->column();
-    }
-
-    public function getAuthRoleNames()
-    {
-        return [$this->role];
-    }
-
-    public function addAuthRoleName($roleName)
-    {
-        $this->updateAttributes(['role' => $this->role = $roleName]);
-    }
-
-    public function removeAuthRoleName($roleName)
-    {
-        $this->updateAttributes(['role' => $this->role = null]);
-    }
-
-    public function clearAuthRoleNames()
-    {
-        $this->updateAttributes(['role' => $this->role = null]);
     }
 
     /**
