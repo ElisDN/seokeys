@@ -20,6 +20,7 @@ return [
     'TITLE_UPDATE' => 'Update',
 
     'BUTTON_SAVE' => 'Save',
+    'BUTTON_SEND' => 'Send',
     'BUTTON_CREATE' => 'Create',
     'BUTTON_UPDATE' => 'Update',
     'BUTTON_DELETE' => 'Delete',
@@ -54,7 +55,7 @@ return [
 
     'FLASH_EMAIL_CONFIRM_REQUEST' => 'Please confirm your Email.',
     'FLASH_EMAIL_CONFIRM_SUCCESS' => 'Thanks! Your Email is confirmed.',
-    'FLASH_EMAIL_CONFIRM_ERROR' => 'Error! Email confirm is not sent.',
+    'FLASH_EMAIL_CONFIRM_ERROR' => 'Email confirmation error.',
 
     'FLASH_PASSWORD_RESET_REQUEST' => 'Follow the link on mail to reset your password.',
     'FLASH_PASSWORD_RESET_SUCCESS' => 'Thanks! Your passwords is changed.',
