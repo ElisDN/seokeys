@@ -20,6 +20,7 @@ return [
     'TITLE_UPDATE' => 'Редактирование',
 
     'BUTTON_SAVE' => 'Сохранить',
+    'BUTTON_SEND' => 'Отправить',
     'BUTTON_CREATE' => 'Добавить',
     'BUTTON_UPDATE' => 'Редактировать',
     'BUTTON_DELETE' => 'Удалить',

@@ -20,6 +20,7 @@ return [
     'TITLE_UPDATE' => 'Update',
 
     'BUTTON_SAVE' => 'Save',
+    'BUTTON_SEND' => 'Send',
     'BUTTON_CREATE' => 'Create',
     'BUTTON_UPDATE' => 'Update',
     'BUTTON_DELETE' => 'Delete',
