@@ -105,8 +105,10 @@ class AuthManager extends PhpManager
      */
     private function getUser($userId)
     {
-        if (!Yii::$app->user->isGuest && Yii::$app->user->id == $userId) {
-            return Yii::$app->user->identity;
+        /** @var \yii\web\User $webUser */
+        $webUser = Yii::$app->get('user', false);
+        if ($webUser && !$webUser->getIsGuest() && $webUser->getId() == $userId) {
+            return $webUser->identity;
         } else {
             return User::findOne($userId);
         }
