@@ -39,3 +39,9 @@ Sign up on site or create your first user manually:
 ~~~
 php yii user/users/create
 ~~~
+
+Assign `admin` role to your user:
+
+~~~
+php yii roles/assign
+~~~
