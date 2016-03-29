@@ -41,3 +41,15 @@ Sign up on site or create your first user manually:
 ~~~
 php yii user/users/create
 ~~~
+
+Init RBAC roles:
+
+~~~
+php yii rbac/init
+~~~
+
+Assign `admin` role to your user:
+
+~~~
+php yii roles/assign
+~~~
