@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\components\widgets;
+namespace app\widgets;
 
 use yii\bootstrap\Widget;
 

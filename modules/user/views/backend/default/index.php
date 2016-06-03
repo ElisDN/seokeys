@@ -1,8 +1,8 @@
 <?php
 
-use app\components\grid\ActionColumn;
-use app\components\grid\LinkColumn;
-use app\components\grid\SetColumn;
+use app\widgets\grid\ActionColumn;
+use app\widgets\grid\LinkColumn;
+use app\widgets\grid\SetColumn;
 use app\modules\user\Module;
 use app\modules\user\models\backend\User;
 use app\modules\user\widgets\backend\grid\RoleColumn;

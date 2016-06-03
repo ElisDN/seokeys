@@ -1,6 +1,6 @@
 <?php
 
-use app\components\widgets\Alert;
+use app\widgets\Alert;
 use app\modules\admin\Module;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap\Nav;

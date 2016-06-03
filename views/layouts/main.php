@@ -1,6 +1,6 @@
 <?php
 
-use app\components\widgets\Alert;
+use app\widgets\Alert;
 use app\modules\admin\rbac\Rbac as AdminRbac;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
