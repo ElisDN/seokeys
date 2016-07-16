@@ -1,11 +1,11 @@
 <?php
 
-namespace tests\codeception\unit\modules\user\models\form;
+namespace tests\codeception\unit\modules\user\forms;
 
 use tests\codeception\fixtures\UserFixture;
 use Yii;
 use yii\codeception\DbTestCase;
-use app\modules\user\models\form\LoginForm;
+use app\modules\user\forms\LoginForm;
 use Codeception\Specify;
 
 class LoginFormTest extends DbTestCase
