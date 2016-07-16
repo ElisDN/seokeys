@@ -2,7 +2,7 @@
 
 namespace app\modules\user\controllers\backend;
 
-use app\modules\user\models\backend\search\UserSearch;
+use app\modules\user\forms\backend\search\UserSearch;
 use app\modules\user\models\backend\User;
 use Yii;
 use yii\filters\VerbFilter;

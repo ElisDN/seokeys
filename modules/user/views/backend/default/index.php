@@ -12,7 +12,7 @@ use yii\grid\GridView;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $searchModel \app\modules\user\models\backend\search\UserSearch */
+/* @var $searchModel \app\modules\user\forms\backend\search\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Module::t('module', 'ADMIN_USERS');

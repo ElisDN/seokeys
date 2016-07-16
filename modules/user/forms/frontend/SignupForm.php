@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\user\models\frontend\form;
+namespace app\modules\user\forms\frontend;
 
 use app\modules\user\models\User;
 use app\modules\user\Module;

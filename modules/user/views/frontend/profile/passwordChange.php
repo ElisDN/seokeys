@@ -5,7 +5,7 @@ use app\modules\user\Module;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model \app\modules\user\models\frontend\form\PasswordChangeForm */
+/* @var $model \app\modules\user\forms\frontend\PasswordChangeForm */
 
 $this->title = Module::t('module', 'TITLE_PASSWORD_CHANGE');
 $this->params['breadcrumbs'][] = ['label' => Module::t('module', 'TITLE_PROFILE'), 'url' => ['index']];

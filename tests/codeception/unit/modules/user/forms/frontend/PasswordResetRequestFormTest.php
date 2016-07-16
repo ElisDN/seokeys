@@ -1,8 +1,8 @@
 <?php
 
-namespace tests\codeception\unit\modules\user\models\frontend\form;
+namespace tests\codeception\unit\modules\user\forms\frontend;
 
-use app\modules\user\models\frontend\form\PasswordResetRequestForm;
+use app\modules\user\forms\frontend\PasswordResetRequestForm;
 use app\modules\user\models\User;
 use Codeception\Specify;
 use tests\codeception\fixtures\UserFixture;

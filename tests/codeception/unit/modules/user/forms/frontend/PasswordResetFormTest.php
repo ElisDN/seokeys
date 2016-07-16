@@ -1,8 +1,8 @@
 <?php
 
-namespace tests\codeception\unit\modules\user\models\frontend\form;
+namespace tests\codeception\unit\modules\user\forms\frontend;
 
-use app\modules\user\models\frontend\form\PasswordResetForm;
+use app\modules\user\forms\frontend\PasswordResetForm;
 use Codeception\Specify;
 use tests\codeception\fixtures\UserFixture;
 use yii\codeception\DbTestCase;

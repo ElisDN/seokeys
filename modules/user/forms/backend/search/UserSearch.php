@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\user\models\backend\search;
+namespace app\modules\user\forms\backend\search;
 
 use app\modules\user\Module;
 use app\modules\user\models\backend\User;
@@ -41,11 +41,11 @@ class UserSearch extends Model
     {
         return [
             'id' => 'ID',
-            'created_at' => UserModule::t('module', 'USER_CREATED'),
-            'updated_at' => UserModule::t('module', 'USER_UPDATED'),
-            'username' => UserModule::t('module', 'USER_USERNAME'),
-            'email' => UserModule::t('module', 'USER_EMAIL'),
-            'status' => UserModule::t('module', 'USER_STATUS'),
+            'created_at' => Module::t('module', 'USER_CREATED'),
+            'updated_at' => Module::t('module', 'USER_UPDATED'),
+            'username' => Module::t('module', 'USER_USERNAME'),
+            'email' => Module::t('module', 'USER_EMAIL'),
+            'status' => Module::t('module', 'USER_STATUS'),
             'date_from' => Module::t('module', 'USER_DATE_FROM'),
             'date_to' => Module::t('module', 'USER_DATE_TO'),
         ];

@@ -2,8 +2,8 @@
 
 namespace app\modules\user\controllers\frontend;
 
-use app\modules\user\models\frontend\form\PasswordChangeForm;
-use app\modules\user\models\frontend\form\ProfileUpdateForm;
+use app\modules\user\forms\frontend\PasswordChangeForm;
+use app\modules\user\forms\frontend\ProfileUpdateForm;
 use app\modules\user\models\User;
 use app\modules\user\Module;
 use Yii;

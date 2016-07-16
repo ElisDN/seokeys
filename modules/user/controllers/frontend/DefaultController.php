@@ -2,11 +2,11 @@
 
 namespace app\modules\user\controllers\frontend;
 
-use app\modules\user\models\frontend\form\EmailConfirmForm;
-use app\modules\user\models\form\LoginForm;
-use app\modules\user\models\frontend\form\PasswordResetForm;
-use app\modules\user\models\frontend\form\PasswordResetRequestForm;
-use app\modules\user\models\frontend\form\SignupForm;
+use app\modules\user\forms\frontend\EmailConfirmForm;
+use app\modules\user\forms\LoginForm;
+use app\modules\user\forms\frontend\PasswordResetForm;
+use app\modules\user\forms\frontend\PasswordResetRequestForm;
+use app\modules\user\forms\frontend\SignupForm;
 use app\modules\user\Module;
 use Yii;
 use yii\base\InvalidParamException;

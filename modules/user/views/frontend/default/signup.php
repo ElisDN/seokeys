@@ -7,7 +7,7 @@ use app\modules\user\Module;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \app\modules\user\models\frontend\form\SignupForm */
+/* @var $model \app\modules\user\forms\frontend\SignupForm */
 
 $this->title = Module::t('module', 'TITLE_SIGNUP');
 $this->params['breadcrumbs'][] = $this->title;
