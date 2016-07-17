@@ -6,7 +6,6 @@ use app\modules\user\models\User;
 use app\modules\user\Module;
 use yii\base\InvalidParamException;
 use yii\base\Model;
-use Yii;
 
 /**
  * Password reset form

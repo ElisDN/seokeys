@@ -4,7 +4,6 @@ namespace tests\codeception\acceptance;
 
 use AcceptanceTester;
 use tests\codeception\_pages\user\LoginPage;
-use Yii;
 
 class AcceptanceCest
 {

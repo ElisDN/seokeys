@@ -6,7 +6,6 @@ use app\modules\user\models\User;
 use app\modules\user\Module;
 use yii\base\Model;
 use yii\db\ActiveQuery;
-use Yii;
 
 class ProfileUpdateForm extends Model
 {
