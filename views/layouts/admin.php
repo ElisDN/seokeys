@@ -36,7 +36,7 @@ echo Nav::widget([
     'activateParents' => true,
     'items' => array_filter([
         ['label' => Yii::t('app', 'NAV_ADMIN'), 'url' => ['/admin/default/index']],
-        ['label' => Yii::t('app', 'NAV_ADMIN_USERS'), 'url' => ['/admin/users/default/index'], 'active' => $context->module->id == 'users'],
+        ['label' => Yii::t('app', 'NAV_ADMIN_USERS'), 'url' => ['/admin/user/default/index'], 'active' => $context->module->id == 'users'],
         ['label' => Yii::t('app', 'NAV_LOGOUT'), 'url' => ['/user/default/logout'], 'linkOptions' => ['data-method' => 'post']]
     ]),
 ]);

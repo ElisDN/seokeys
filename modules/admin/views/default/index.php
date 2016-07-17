@@ -13,6 +13,6 @@ $this->title = Module::t('module', 'ADMIN');
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(UserModule::t('module', 'ADMIN_USERS'), ['users/default/index'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(UserModule::t('module', 'ADMIN_USERS'), ['user/default/index'], ['class' => 'btn btn-primary']) ?>
     </p>
 </div>
