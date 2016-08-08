@@ -89,9 +89,9 @@ class SignupForm extends Model
                     ->setTo($this->email)
                     ->setSubject('Email confirmation for ' . Yii::$app->name)
                     ->send();
+                
+                return $user;
             }
-
-            return $user;
         }
 
         return null;
