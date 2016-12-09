@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="user-form">
 
-        <?php $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin(['id' => 'profile-update-form']); ?>
 
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 

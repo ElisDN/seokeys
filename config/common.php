@@ -2,6 +2,8 @@
 
 use yii\helpers\ArrayHelper;
 
+Yii::setAlias('@tests', dirname(__DIR__) . '/tests');
+
 $params = ArrayHelper::merge(
     require(__DIR__ . '/params.php'),
     require(__DIR__ . '/params-local.php')

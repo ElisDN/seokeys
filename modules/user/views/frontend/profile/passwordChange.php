@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="user-form">
 
-        <?php $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin(['id' => 'password-change-form']); ?>
 
         <?= $form->field($model, 'currentPassword')->passwordInput(['maxlength' => true]) ?>
         <?= $form->field($model, 'newPassword')->passwordInput(['maxlength' => true]) ?>

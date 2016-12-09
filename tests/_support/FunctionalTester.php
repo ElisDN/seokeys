@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\user\models\backend\User;
 
 /**
  * Inherited Methods
@@ -20,4 +21,19 @@ class FunctionalTester extends \Codeception\Actor
 {
     use _generated\FunctionalTesterActions;
 
+    public function amLoggedInAsAdmin()
+    {
+        $this->amLoggedInByUsername('admin');
+    }
+
+    public function amLoggedInAsUser()
+    {
+        $this->amLoggedInByUsername('user');
+    }
+
+    public function amLoggedInByUsername($username)
+    {
+        $I = $this;
+        $I->amLoggedInAs($I->grabRecord(User::className(), ['username' => $username]));
+    }
 }

@@ -8,5 +8,5 @@ modules:
     enabled:
       - Asserts
       - Yii2:
-            part: [orm, email]
+            part: [orm, fixtures, email]
             configFile: 'tests/_config/unit.php'
