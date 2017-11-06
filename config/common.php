@@ -62,6 +62,13 @@ return [
                 '<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w-]+>' => '<_m>/<_c>/<_a>',
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['user', 'admin'],
+            'itemFile' => '@app/rbac/data/items.php',
+            'assignmentFile' => '@app/rbac/data/assignments.php',
+            'ruleFile' => '@app/rbac/data/rules.php'
+        ],
         'i18n' => [
             'translations' => [
                 'app' => [
